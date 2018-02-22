@@ -1,2 +1,1 @@
-# dltnwl
-테스트
+CTC Korean speech recognition
