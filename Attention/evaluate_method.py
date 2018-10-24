@@ -202,30 +202,30 @@ print('wer',tt_wer)
 print('ler',tt_ler)
 
 
-#    for j in range(0,len(te_pred_y)):
-#        if accepts(dfa,0,{3},compress(te_pred_y[j]))!=True:
+    for j in range(0,len(te_pred_y)):
+        if accepts(dfa,0,{3},compress(te_pred_y[j]))!=True:
        #arr=np.where(arr.data.numpy()>=torch.max(arr).data.numpy(), -inf, arr.data.numpy())
     
-#            final=te_pred_y[j]
-#            aa=[]
-#            while accepts(dfa,0,{3},compress(final))!=True:
-#                id=accepts(dfa,0,{3},compress(final))
-#                if id!=False:
-#                    aa=pred_y[j*26:(j+1)*26][id].data.numpy()
-#                    aa=np.where(aa>=max(aa),-inf,aa)
+            final=te_pred_y[j]
+            aa=[]
+            while accepts(dfa,0,{3},compress(final))!=True:
+                id=accepts(dfa,0,{3},compress(final))
+                if id!=False:
+                    aa=pred_y[j*26:(j+1)*26][id].data.numpy()
+                    aa=np.where(aa>=max(aa),-inf,aa)
                 
-#                    pred_y.data.numpy()[(j*26)+id,:]=aa
-#                    final=torch.max(pred_y[j*26: (j+1)*26],dim=1)[1].cpu().data.numpy().reshape(26)
-#                else:
-#                    break
-#            aa=WER(te_true_y[j],final)
-#            wer+=aa.wer()
-#    else:
-#        final=te_pred_y[j]
-#        aa=WER(te_true_y[j],final)
-#        wer+=aa.wer()
-#    test_wer.append(wer)
-#    test_pred.append(final)
+                    pred_y.data.numpy()[(j*26)+id,:]=aa
+                    final=torch.max(pred_y[j*26: (j+1)*26],dim=1)[1].cpu().data.numpy().reshape(26)
+                else:
+                    break
+            aa=WER(te_true_y[j],final)
+            wer+=aa.wer()
+    else:
+        final=te_pred_y[j]
+        aa=WER(te_true_y[j],final)
+        wer+=aa.wer()
+    test_wer.append(wer)
+    test_pred.append(final)
 
 
 
