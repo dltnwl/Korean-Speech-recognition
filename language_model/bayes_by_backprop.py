@@ -50,21 +50,6 @@ hidden_size=512
 
 
 
-ctc_labels = _hangul.JAMOS
-labels = [" "] + ctc_labels
-
-def load_data(data_dir):
-  preprocess_text = getattr(import_module("utils.hangul"), "jamo_token")
-  cache_path = _path.join(data_dir, "opendict" + "_cache.pkl")
-  with open(cache_path, "rb") as f:
-      cache = _pickle.load(f)
-  return  [[audio,preprocess_text(text)] for (audio, text) in cache]
-
-
-data=load_data('/home/suji93/data/')
-data = list(filter(lambda x: x[0] is not None,data))
-
-
 
 _encode_map = {c: i for i, c in enumerate(labels)}
 _decode_map = labels + [""]
@@ -77,58 +62,6 @@ def encode(texts):
 
 def decode(sequences):
   return list(map(lambda s: "".join(map(lambda c: _decode_map[c], s)), sequences))
-
-
-
-def feed(data):
-
-    text=encode(data[1])
-    input_len_feed = np.asarray(list(map(len, data[0])))
-    inputs_feed = np.zeros((len(data[0]),
-                             max(input_len_feed),
-                             feat_len),
-                            np.float32)
-    for i, l in enumerate(input_len_feed):
-      inputs_feed[i, :l, :] = data[0][i]
-    return {inputs: inputs_feed,
-            input_len: input_len_feed,
-            output: text
-            }
-
-
-def batch_generator(data, batch_size,idx=0, num_workers=1, bin_size=100, bin_num=10):
-
-  tmp = []
-  bin_idx = 0
-  for _ in range(bin_num):
-    tmp.append(list(filter(lambda x: bin_idx <= len(x) and len(x) < bin_idx+bin_size,data)))
-    bin_idx += bin_size
-  order = list(range(0, len(data), batch_size))
-  while True:
-    _shuffle(order)
-    for i in range(bin_num):
-      _shuffle(tmp[i])
-    data = sum(tmp, [])
-    for i in order:
-      if i % num_workers == idx:
-        yield list(zip(*data[i:(i+batch_size)]))
-        
-_random.seed(21920)
-_random.shuffle(data)
-        
-n_train = int(len(data) * 0.85/batch_size) * batch_size
-n_valid=n_train+int(len(data)*0.05)
-n_test=n_valid+int(len(data)*0.1)
-test_set=data[n_valid:n_test]
-valid_set=data[n_train:n_valid]
-batchs = {
-      "train": batch_generator(data[:n_train], batch_size),
-      "valid": batch_generator(data[n_train:n_valid], batch_size),
-      "test": batch_generator(data[n_valid:n_test], batch_size)
-  }
-
-
-
 
 
 nest = tf.contrib.framework.nest
