@@ -21,13 +21,16 @@ Listen Attend and Spell
 
 
 
-Result(단어)
+Result
 ---------------------------
+ *단어
 Model| LER | WER |
 ---- | ---- | ---- |
 CTC| 5.092 | 33.00 |
 Attention | 5.750 | 30.40 |
 
+
+ *실제와 추정 값 비교
 Original| Decode | 
 ---- | ---- | 
 저축되다 | 저축되다 | 
