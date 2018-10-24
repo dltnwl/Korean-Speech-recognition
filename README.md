@@ -1,1 +1,1 @@
-CTC Korean speech recognition
+Korean speech recognition/ CTC and Attention
