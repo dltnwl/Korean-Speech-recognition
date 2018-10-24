@@ -75,7 +75,6 @@ data = list(filter(lambda x: x[0] is not None,data))
 _encode_map = {c: i for i, c in enumerate(labels)}
 _decode_map = labels + [""]
 def encode(texts):
-  """Encode pre-processed texts to (sparse) CTC input."""
   indices = []
   values = []
   for index, text in enumerate(texts):
