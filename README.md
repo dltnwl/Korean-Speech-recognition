@@ -23,6 +23,11 @@ Listen Attend and Spell
 
 Result(단어)
 ---------------------------
+Model| LER | WER |
+---- | ---- | ---- |
+CTC| 5.092 | 33.00 |
+Attention | 5.750 | 30.40 |
+
 Original| Decode | 
 ---- | ---- | 
 저축되다 | 저축되다 | 
@@ -34,7 +39,4 @@ Original| Decode |
 개울물 | 개울물 |
 
 
-Model| LER | WER |
----- | ---- | ---- |
-CTC| 5.092 | 33.00 |
-Attention | 5.750 | 30.40 |
+
