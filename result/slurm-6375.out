@@ -3106,10 +3106,4 @@ original 초식장
 decode 초식장
 original 아옹다옹하다
 decode 아옹다웁하다
-Traceback (most recent call last):
-  File "test.py", line 381, in <module>
-    result= beam_search_decoder(data[i*26:(i+1)*26], 20)
-  File "test.py", line 352, in beam_search_decoder
-    candidate = [seq + [j], score *log(-row[j])]
-ValueError: math domain error
 #### FINISH compare2.sh AT Tue Jun 26 13:39:29 KST 2018 #####
