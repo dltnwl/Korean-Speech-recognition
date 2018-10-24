@@ -30,3 +30,4 @@ original 휘적거리다
 decode 휘적거리다
 original 공동화
 decode 공동화
+
