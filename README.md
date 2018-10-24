@@ -13,7 +13,7 @@ CNN-BiLSTM(256) | 0.225424 |
 BiLSTM(256) with noise | 0.4920 |
 CNN-BiLSTM(256) with noise | 0.3956 |
 
-![트레이닝추이](./image/picture.JPG)
+![트레이닝추이](./image/picture.JPG){: width="100" height="80"}
 
 
 Listen Attend and Spell
