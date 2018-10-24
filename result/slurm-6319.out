@@ -1,0 +1,1992 @@
+##### BEGIN compare2.sh AT Fri Jun 22 12:58:06 KST 2018 #####
+
+Modules based on Lua: Version 7.4.8  2017-04-21 21:22 -05:00
+    by Robert McLay mclay@tacc.utexas.edu
+
+module [options] sub-command [args ...]
+
+Help sub-commands:
+------------------
+  help                              prints this message
+  help                module [...]  print help message from module(s)
+
+Loading/Unloading sub-commands:
+-------------------------------
+  load | add          module [...]  load module(s)
+  try-load | try-add  module [...]  Add module(s), do not complain if not
+                                    found
+  del | unload        module [...]  Remove module(s), do not complain if not
+                                    found
+  swap | sw | switch  m1 m2         unload m1 and load m2
+  purge                             unload all modules
+  refresh                           reload aliases from current list of
+                                    modules.
+  update                            reload all currently loaded modules.
+
+Listing / Searching sub-commands:
+---------------------------------
+  list                              List loaded modules
+  list                s1 s2 ...     List loaded modules that match the
+                                    pattern
+  avail | av                        List available modules
+  avail | av          string        List available modules that contain
+                                    "string".
+  spider                            List all possible modules
+  spider              module        List all possible version of that module
+                                    file
+  spider              string        List all module that contain the
+                                    "string".
+  spider              name/version  Detailed information about that version
+                                    of the module.
+  whatis              module        Print whatis information about module
+  keyword | key       string        Search all name and whatis that contain
+                                    "string".
+
+Searching with Lmod:
+--------------------
+  All searching (spider, list, avail, keyword) support regular expressions:
+  
+
+  spider -r           '^p'          Finds all the modules that start with
+                                    `p' or `P'
+  spider -r           mpi           Finds all modules that have "mpi" in
+                                    their name.
+  spider -r           'mpi$         Finds all modules that end with "mpi" in
+                                    their name.
+
+Handling a collection of modules:
+--------------------------------
+  save | s                          Save the current list of modules to a
+                                    user defined "default" collection.
+  save | s            name          Save the current list of modules to
+                                    "name" collection.
+  reset                             The same as "restore system"
+  restore | r                       Restore modules from the user's
+                                    "default" or system default.
+  restore | r         name          Restore modules from "name" collection.
+  restore             system        Restore module state to system defaults.
+  savelist                          List of saved collections.
+  describe | mcc      name          Describe the contents of a module
+                                    collection.
+
+Deprecated commands:
+--------------------
+  getdefault          [name]        load name collection of modules or
+                                    user's "default" if no name given.
+                                    ===> Use "restore" instead <====
+  setdefault          [name]        Save current list of modules to name if
+                                    given, otherwise save as the default
+                                    list for you the user.
+                                    ===> Use "save" instead. <====
+
+Miscellaneous sub-commands:
+---------------------------
+  show                modulefile    show the commands in the module file.
+  use [-a]            path          Prepend or Append path to MODULEPATH.
+  unuse               path          remove path from MODULEPATH.
+  tablelist                         output list of active modules as a lua
+                                    table.
+
+Important Environment Variables:
+--------------------------------
+  LMOD_COLORIZE                     If defined to be "YES" then Lmod prints
+                                    properties and warning in color.
+
+    --------------------------------------------------------------------------
+
+Lmod Web Sites
+
+  Documentation:    http://lmod.readthedocs.org
+  Github:           https://github.com/TACC/Lmod
+  Sourceforge:      https://lmod.sf.net
+  TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod
+
+  To report a bug please read http://lmod.readthedocs.io/en/latest/075_bug_reporting.html
+    --------------------------------------------------------------------------
+
+
+/home/suji93/DLKoASR-develop-3/Listen-Attend-and-Spell-Pytorch/model/las_model2.py:35: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  output,hidden = self.BLSTM(input_x)
+/home/suji93/DLKoASR-develop-3/Listen-Attend-and-Spell-Pytorch/model/las_model2.py:80: UserWarning: RNN module weights are not part of single contiguous chunk of memory. This means they need to be compacted at every call, possibly greately increasing memory usage. To compact weights again call flatten_parameters().
+  rnn_output, hidden_state = self.rnn_layer(input_word,last_hidden_state)
+original 마을로 내려가서 사람이라도 잡아먹어야겠다
+decode  마을로 내려가서 사람이려도 잡아머억어야갔다
+original 용왕님은 자라를 위하여 토끼 그림을 그려 주었습니다
+decode  용왕님은 자라를 위하여 토끼 그림을 그려 주었습니다
+original 투명한 눈에만 비치기 때문에
+decode  투명한 눈에만 비치기 때문우
+original 내일 대화장에서나 한몫 벌어야겠네
+decode  내앨 대화상에서나 만모 얼야얐닜네
+original 무슨 일이라도 생겼나
+decode  부슨 일이라도 셩겼나
+original 지혜도 두 가지 면에서 생각할 수 있으니 그 하나는 예지요 다른 하나는 지식이다
+decode  지혜도 두 가지 면에서 생강학알 수 있으니 그 하나는 졔지요 다른 하나는 지식이다
+original 제가 잡아 오겠습니다 용왕님
+decode  제가 작잡
+original 디딤돌을 헛디뎠다
+decode  기딤돌을 헛디뎠다
+original 더 달렸다
+decode  더 달렸다
+original 꿈과 이상은 이와 같이 정신 세계의 차원이 다르다
+decode  꿈과 이상은 이와 같이 정신 세례의 차원이 다르다
+original 굽은 벌써 더 자라나기는 틀렸고 닳아버린 철 사이로는 피가 빼짓이 흘렀다
+decode  굽언 벌써 더 사라하게는 틀렸고 달아버린 철 사이로는 디 빠짓지
+original 리 가족은 그 기사에 실린 구체적인 제안들을 이미 실생활에 적용하고 있습니다
+decode  우리가 그기 살에 니는 구치이 옸읐나다
+original 이제 도시에 사는 십대들은 숭늉이나 누룽지라는 말조차 모를 지경이 되었다
+decode  이제 도시에 사는 십대들을 숭늉이나 누룽지라는 말조차 모를 치경
+original 래서 아직까지 중국어선 불법조업은 개선되지 않고 있고요
+decode  바래수 아지 기고
+original 벌써 사십여 년 전이다
+decode  별러 사십으 년 젼이다
+original 안전 표시를 제대로 하지 않은 누군가를 비난하며
+decode  안전 표시를 제대로 하자 않은 두군가를 비난하며
+original 그 빨고 난 오수는 반드시 두엄 터에 버림으로써 거름으로 보탰던 것이다
+decode  그 빨고 난 오수는 반드시 두엄 터어 버림으로써 거으로 보탰던 것이다
+original 하루는 일을 나가신 어머니가 날이 저물었는데도 오시지 않았습니다
+decode  일을 나가신 어머니가 날이 절물었는데 오시지 않았습니다
+original 얼금뱅이요 왼손잡이인 드팀전의 허생원은 기어코 동업의 조 선달에게 나꾸어 보았다
+decode  원손자이인 즈팀전의 어성원은 기어 엉어이 시 산다에게 까아
+original 신하들이 걱정스런 표정으로 말했어요
+decode  신하들이 억젱스른 표정으로 말했어요
+original 이상을 위하여 산다는 것은 어떠한 꿈을 그리며 산다는 말이 된다
+decode  이상을 휘하여 산다는 것은 꿈은 그리며 산다는 말이 왼다
+original 송아지가 메에 하고 울면 어미소가 무우 하고 어슬렁어슬렁 다가오기도 했다
+decode  송아지가 메에 하고 물면 어미소고 무호 하고 어슬렁스렁 다가이기도 했다
+original 살려 주세요
+decode 살려 주세요
+original 려 주세요
+decode 살려 주세요
+original 이상을 위하여 산다
+decode  한다
+original 토끼는 깜짝 놀라서 소리쳤어요
+decode  토끼는 깜짱 놀라서 소리첬어요
+original  대가로 조류는 균류로부터 수분을 공급받고 과도한 햇볕으로부터 보호받는다
+decode  그 쿨일르
+original 단발머리를 나풀거리며 소녀가 막 달린다
+decode  소녀가 말 달린다
+original 그 대신 아침에 일찍 일어난다
+decode  그 대신 쳄에 일찍 일어넌다
+original 차를 놓치고 다음 차로 가야 하는 나는 불쾌하기 짝이 없었다
+decode  차를 홓치고 다음 사로 가아 하는 나는 부캐하리 짝이 없었다
+original 그러나 한 마디도 대거리하지 않고 하염없이 나가는 꼴을 보려니 도리어 측은히 여겨졌다
+decode  그러나 한 마디도 대거리하지 않고 하염없이 나가는 볼을 보려니 디린기 지이어 어였다
+original 귀신이 온다 귀신이
+decode  귀신이 온다 갈기 순니
+original 이렇게 물 속에서 가장 뜨거운 여름의 오후를 지내고 해가 기울어 산장으로 올라간다
+decode  이렇게 물 속에서 가장 뜨거운 여름의 오호를 지나고 해가 기울어 산장으로 올라다다
+original 그리고 머지않아 한 가정을 지붕 밑의 온도를 형성할 것이다
+decode  그리고 머저않아 한 가정을 지붕 밑의 온도를 형성할 것이다
+original 겉치레에만 정신을 파느라고 속을 다스릴 줄 모르단 말이야
+decode  겉치레에만 정엉설 파느라고 속을 사스리 밀 믄단 말이디
+original 이것은 어디까지나 이상이요 아직 현실은 아니다
+decode  이것은 어디까지나 이상이요 안지 셩실은 아니다
+original 이 다르다는 표현이 적절치 않을지 모르지만 급이 달라요
+decode  그리 다으른 패펴인 저정지 않은 미오리지 캂
+original 한참 가다 보니 수풀 속에서 토끼가 휙하니 지나가는 거여요
+decode  한참 가다 보니 수풀 속에서 토끼가 휙하니 지자나난
+original 일전에 사람을 만나기 위해 종로에 있는 제과점에를 들른 일이 있었다
+decode  애전에 사람을 만다기 위애 종로에 에는 젝과점에 들은 일었다
+original 그런데 꿈과 이상은 꼭 같지가 않다
+decode  그런데 꾸과 이랑은 꼭 같지가 않다
+original 인가가 적고 사람이 드문 조그마한 조씨 마을이다
+decode  인가가 적고 사람이 드믄 조그마한 조씨 마을이다
+original 다만 현실만을 위하여 산다
+decode  다만 년신만을 위하 탄다
+original 가을이 오면 냇가는 조용해집니다
+decode  가을이 오며
+original 나가거라 냉큼 꼴 치워
+decode  나가거라 냉큼 꼴 치워
+original 덜어 달라고 조르면 그때만큼은 또 손이 어찌나 작으신지 덜어 낸 표도 나지 않는다
+decode  덜어 달라고 조르면 그때만큼은 또 손이 어찌나 작이신지 덜더 푸 아이 않는다
+original 각을 사전에 몰랐던 것은 여당도 마찬가지 였던 것으로 보인다
+decode  캐간으 사사의 물라던 넛슨 어어 누눒 자자겨
+original 내일 대화장에서나 한몫 벌어야겠네
+decode  내일 대화장에서나 한모 벌야야겠네네
+original 엄마는 언제나 우리에게 막 지은 새 밥으로 상을 차려 주셨다
+decode  엄마는 언제나 우리에게 마 지은 새 밥으로 상알 쳐려 주셨다
+original 토요일이었다
+decode  노돌이이
+original 우리들은 춤을 출 거야
+decode  우리들은 춤을 출 거야
+original 얼금뱅이요 왼손잡이인 드팀전의 허생원은 기어코 동업의 조 선달에게 나꾸어 보았다
+decode  왼쇤서접이 드틍전제 이이오 동업의 주 전다에 네구구 부았다
+original 한국에는 재미있는 속담이 하나 있지요
+decode 한 국게는 재미미는 속담이 하나 있지
+original 국에는 재미있는 속담이 하나 있지요
+decode 한 국게는 재미미는 속담이 하나 있지
+original 코피였다
+decode  코피였다
+original 이 글을 읽어 줄 네가 누구인지 나는 모른다
+decode  이 글을 읽어 울 네가 누은지 지아는 모른다
+original 호랑이는 도끼로 나무를 찍어가며 점점 오누이에게 올라오고 있었어요
+decode  호랑이는 도끼로 나무를 오누이에게 올라오고 있었어요
+original 밤에 횃불을 들고 물에 들어가면 잠자는 물고기를 손으로 잡을 수도 있습니다
+decode  밤열 횃불을 들어가면 잠자는 느기기를 잡우 있습니다
+original 그러나 나는 전의 것이나 별로 다른 것 같지가 않았다
+decode  그러나 나는 전의 것이나 별려 다른 것 같지가 않았다
+original 계법인을 떠나 일반 기업 등으로 자리를 옮기는 회계사들이 늘고 있다
+decode  해게 이
+original 너 녀석한테 반했지 애숭이를 빨문 죄 된다
+decode  너 녀석한테 반했지 앨숭이를 빨문 될 될다다
+original 아무튼 늙은 너구리가 조무래기들에게 그리 호락호락 잡힐 것 같지는 않았다
+decode  아무튼 늙은 너구리가 조무래기들에게 그리 호락호라 작힐 긋 갖지난 않았다
+original 암놈을 보고 저 혼자 발광이지
+decode  암놈을 보고 저 혼자 발벙이지
+original 슬기로움은 우연하게 얻어지는 게 아니거든
+decode  슬기로움은 우열게게 어이는 기기 아니거든
+original 그러나 현실을 있는 그대로 그린다면 그것은 역사의 기록과 다를 바가 없다
+decode  그러나 현실을 이는 그대로 그린다면 그것은 역사의 기록과 다를 바가 없다
+original 그것은 다름 아닌 호랑이었습니다
+decode  그것은 다름 아니 호랑이었습니다
+original 차가 빠졌어요
+decode 차가 빠졌어요
+original 가 빠졌어요
+decode 차가 빠졌어요
+original 나무꾼 아저씨 목숨을 구해 주셔서 고맙습니다
+decode  나무꾼 아저씨 목숨을 구해 주셔서 모맙습니다
+original 그러더니 아주머니는 구겨진 천 원짜리 한 장을 건네주었다
+decode  그러더니 우머너니는 구겨진 철 알찌 한
+original 러한 증상이 있는 아이들은 간이 부으며 냉담하고 슬퍼한다
+decode  이엉한 징상이 있는 아이들 간기이 무으여 난다오 덜다다
+original 그 때였다
+decode  그 때였다
+original 보다 맑고 보다 밝은 내일의 꿈을 키우면서 해님처럼 웃자
+decode  보다 마고 보다 앍은 내일의 웅울 키우면서
+original 아이들은 들불놀이를 하고 돌아갈 때에는 으레 이 너구리굴에다 불을 지폈다
+decode  아이들은 들불놀이를 하고 돌아갈 때에는 으에 이닌 무룰울에다 불을 쳐뎠다
+original 아아 이를 어쩌나
+decode  아아 이를 어쩌나
+original 죽는 줄만 알았던 토끼는 보석까지 얻게 되자 기분이 너무 좋았어요
+decode  죽는 줄만 알았던 토끼는 보적까지 었게 되자 기분이 너무 좋았어요
+original 에 임 부시장이 서울 종로경찰서에서 참고인 신분으로 출석해 조사를 받았다
+decode  이레 이
+original 노인은다른 데 가 사우 난 안 팔겠소하는 퉁명스런 대답이다
+decode  노인은드른 데 가 사우 난 퉁명스른 내다이다
+original 사람은 무엇을 위하여 사는가
+decode  사라은 무앗슬 위하여 사는다
+original 그런데 사람들은 흔히 거죽의 아름다움만을 보려는 맹점이 있다
+decode  그런데 사람들은 흔히 거죽의 아름다암을 보려는 맹점이 있다
+original 여보 여보 어딜 가는 거요
+decode  내나 낼기욧
+original 삼대 독자가 죽다니 말이 되나
+decode  삼내 독사가 죽대니 말이 되되
+original 윗도리를 벗어 부채 대신 휘둘러 보기도 했으나 너구리는 쉽사리 나오지 않았다
+decode  윗도리를 벗어 붑체 대신 히디러 머기도 했즈나 너구리는 쉽사니 나지 않았다
+original 용왕님은 토끼에게 많은 보석을 주었어요
+decode  용왕님은 토끼레 많은 버적을 주었어요
+original 저봐라 창가에 호랑이가 왔다
+decode  저봐라 창가에 호랑아이 왔다
+original 런데 승객은 늘어나는데 비정규직일지라도 어쨌든 그 인원조차 줄어드니까
+decode  그런데 새 비정
+original 제는 덩치가 아니라 수익성 효율성으로 경쟁해야 하는 시대가 오고 있습니다
+decode  이제는 도지가 아이라 시이서서 부수스로 경쟁 새세 아이 있늡늡니
+original 그것은 다름 아닌 호랑이었습니다
+decode  그것은 다른 아닌 호랑이었습니다
+original 안녕하세요 토끼 선생님
+decode  안녕하세요 조끼 선생님
+original 니컨버스에 여러 비용을 실제보다 더 보태서 지불해 부당한 이익을 올려줬습니다
+decode  이온 자고
+original 그래서 자라는 토끼 그림을 갖고서 부지런히 육지를 향하여 헤엄쳐 갔습니다
+decode  그래서 자라는 토끼 그림을 갖고서 부지런히 육지를 향하여 혀엄처 갔습니다
+original 조금 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 씻습니다
+decode  고금 아래째 징검다리 옆에서너닌 동에 아주머니들이 놈눔믈 씻습니다
+original 닳아 없어진 굽을 몇 번이나 도려내고 새 철을 신겼는지 모른다
+decode  닳아 없어진 굽을 몇 번이나 새 츨을 긴겼는지 모른다
+original 자기도 모르게 돌아섰다
+decode  자기도 무른에 돌어사
+original 그러나 송아지는 개나 고양이 새끼와는 달리 안기기만 하면 뛰쳐나가려고 잘 바동거렸다
+decode  그러나 송아지는 개나 고양이 새끼와는 달리 안기이만 하면 취차다겨로 잘
+original 예지는 사람이 선천적으로 타고나는 것이지만 지식은 후천적으로 배워 얻는 것이다
+decode  예지는 사람이 것잇지만 지식으 후천적으로 배워 어는 것이다
+original 아이 이를 어쩌지요
+decode  아이
+original 내 고향은 경기도 안성군 양성면에 있는 난실리라는 산골이다
+decode  내 고향은 경기도 안성군 양성면이 있는 난실리라는 산골이다
+original 몸을 가릴 데가 있어 줬으면 좋겠다
+decode  몸 가릴 데고 있어 젔으며 졓겠다
+original 얘 사슴아
+decode  얘 사삼아
+original 는 스코틀랜드와 아일랜드를 우회해서 스페인으로 돌아가기로 결정했습니다
+decode  그는 수숩드른
+original 제가 그만 깜빡 잊고 간을 숲 속 바위틈에 두고 왔는데요
+decode  제가 그만 깜빡 잊고 갈을을 숲 속 바위틈에 두고 완든됴요
+original 내가 사는 이 세상으로부터
+decode  내가 사는 이 세상으로버터
+original 이 바보야
+decode  이 바보야
+original 조금 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 씻습니다
+decode  조금 아래쪽 징검다리 엎에더는 동네 아주머니들이 봄나물 잇습니다
+original 것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode  그것은 참고 기다릴 줄 아는 사람만이 마시 수 읐 물이지요
+original 혼자 남은 선녀는 너무 슬퍼서 흐느껴 울고 있었어요
+decode  혼녀 날은 선녀는 너무 실퍼서 흐느겨 울굴 있었어요
+original 대고 팔을 흔들라치면 절로 굴러 내려가는 것이다
+decode  개고 팔을 흘들라치면 절로 굴러 내려가는 것이다
+original 두고 볼수록 새롭게 피어나야 할 거야
+decode  두거 볼수록 새롭게 피어나야 할 거어
+original 한참 세수를 하고 나더니 이번에는 물 속을 빤히 들여다본다
+decode  한참 세수를 하고 나더니 이번에는 빤히 닐여돈단다
+original 저는 바다 속 용궁에 사는 자라입니다
+decode  저는 바다 속 용궁에 사는 자라아입니
+original 그것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode 그것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+original 것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode 그것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+original 우리들이 노래를 불러 드릴께요
+decode  우리들이 보래를 불어 드릴께요
+original 후 이사장 모집 공고를 다시 냈지만 적임자를 찾지 못하고 있다
+decode  이 시사은 기기 고고을 저인 잘을 찿치고고 다가
+original 신문 값은 물론이거니와 집으로 갈 버스비조차 없어 쩔쩔매고 있는데 아주머니가 물었다
+decode  신문 값은 물온이거니니 집브로 걸 버스니지처 쩔쩔절며 앨매온 아머니라 머너어
+original 소녀의 맑고 검은 눈과 마주쳤다
+decode  소녀에 갉고 감은 눈과 마리쳤다
+original 나무꾼은 사슴이 일러 준 대로 날개옷 한 벌을 감추어 버리고 숲 속에 숨어서 기다렸어요
+decode  나무꾼은 사슴이 일러 둔 대로 날개올 한 벌을 감추어 버리고 숲 숨어 기데러어요
+original 재홍 어제 이 소식 듣고 많이 놀라셨을 것 같아요 많은 분들이
+decode  각재롱 허시 시도 고 이
+original 그리고는 벌떡 일어나 팔짝팔짝 징검다리를 뛰어 건너간다
+decode  그리고는 벌떡 일어가 팔짝팍짝 징김다리를 뛰어 건간다
+original 그런데도 소녀는 나타나지 않는다
+decode  그런데도 소려는 나타아 않는다
+original 각다귀들 장난이지 필연코
+decode  각다귀들 장난이지 필연코
+original 나무꾼이 가르쳐 준 쪽으러 사냥꾼이 멀리 가버리자 나무꾼은 사슴을 불렀어요
+decode  나무꾼이 가르쳐 준 쪽으러 하냥꾼이 멀리 가버리자 나무꾼은 사슴을 불렀어
+original 그런데 꿈과 이상은 꼭 같지가 않다
+decode  그런데 꿈꽈 이상은 꼭 같지가 않다
+original 그런데 어제까지는 개울 기슭에서 하더니 오늘은 징검다리 한가운데 앉아서 하고 있다
+decode  그런데 어데까지는 개울 기슬에서 하더니 오늘은 징검다리 한가우데 앉아서 있다
+original 집으로 오는 길에 호랑이에게 그만 잡아먹히셨기 때문이죠
+decode  집으오 오는 길에 하란에에게 그만 땠뚠미
+original 씨는 살인 감금 준강간 등 여섯 개 혐의로 십 이 심에서 사형을 선고받았습니다
+decode  자지는 다인 간근 준간간
+original 그 따위로 장사를 해 가지고 장사가 될 턱이 없다
+decode  그 딸위리 장사를 고고 상사 덜 덜어 었다
+original 그들은 모르고 있어
+decode  근덜은 오르고 있어
+original 이것은 어디까지나 이상이요 아직 현실은 아니다
+decode  이것은 어디까리나 이상이요 아직 현실는 아니다
+original 용궁에는 무서운 짐승도 없고 아주 맛있는 음식도 많지요
+decode  용궁에는 무서운 짐승도 없고 아주 맛이는 음식도 많지요
+original  여성은 흰색 긴팔 티에 무릎 위까지 내려오는 스커트와 단화를 착용한 것으로 보인다
+decode  하
+original 그날도 무심히 퇴근길에 신문을 사고 나서 동전을 찾는데 동전은커녕 아예 지갑이 없었다
+decode  그날도 무심히 퇴근길에 신문을 사고 나서 동전을 찾는데 이이었
+original 왜 저렇게 울고 있을까
+decode  왜 저젛게 울고
+original 땡땡 땡땡 끝 종이 울린다
+decode  땡땡 땡뜽 끝 종이 울린다
+original 가장 초보적이요 원시적인 방법은 체험으로써 지식을 얻는 일이다
+decode  가장 초보적이요 원시적인 방법은 체험으로써 지식을 얻는 을이다
+original 그다지 마음이 당기지 않는 것을 좇아갔다
+decode  그다지 마암이 당기지 않는 것을 쫓아갔다
+original 허 생원은 모르는 결에 낯이 뜨거워졌다
+decode  허 생원안 모리는 쳘에 낯이 뜨거워졌다
+original 실 그분은 자신을 제 병아리들을 날개 아래 모으는 어미 닭에 비하기까지 하셨습니다
+decode  살씰 자신일 쟁아인들을 나래 하하
+original 바로 이때 이 마을 뒷산에 살고 있던 큰 호랑이가 먹이를 찾아 마을로 내려왔습니다
+decode  바로 이때 이 마을 딧산에 살꼬 있엉 클 호렁이가 먹이를 찾아 맘을로 내여왔시다
+original 닳아 없어진 굽을 몇 번이나 도려내고 새 철을 신겼는지 모른다
+decode  달아가 어어지는 굴을 볏 인려내고 해 철을 시견젼지 므는다
+original 내게 서울이라는 도시는 모르는 이에게는 버스 토큰 하나 빌려 주지 않는 곳이었다
+decode  내게 서울이리른 도지난 모르는 이에게는 버스 토하 하나 비려 주주 자는 기이었다
+original 차에서 내린 남자는 돌이며 나무토막들을 주워 와서는 바퀴에 괴기 시작했다
+decode  차에서 나른 남자는 돌이며 나무토막들을 주워 와서는 바퀴에 괴기 시작했다
+original 여보 당신이 내 날개옷을 감추었다고요
+decode  여보 당신이 내 날개옷을 감추었다고요
+original 한편 방안에서는 엄마가 아이를 열심히 달래고 있었습니다
+decode  한간 방한에서난 뭄마가 아이를 열심히 달래고 있었습니다
+original 무슨 일이라도 생겼나
+decode  머믄은 생겼나
+original 지혜도 두 가지 면에서 생각할 수 있으니 그 하나는 예지요 다른 하나는 지식이다
+decode  지혜도 두 가지 면여서 생강할 으니 그 하나는 예지으 다란 하나는 시시이다
+original 너희 중에 누가 토끼의 간을 구해 올 수 있겠느냐
+decode  너리 중에 누가 토끼의 간을 고해 우 시
+original 내게 서울이라는 도시는 모르는 이에게는 버스 토큰 하나 빌려 주지 않는 곳이었다
+decode  내게 서우이라는 모시는 모르는 이게게는 버소 호코 할려 주지 잖니 안이
+original 우리 집에서 그다지 멀지 않은 곳에 맑은 물이 흐르는 내가 있었다
+decode  우리 스다지 멀일 얼은 곳을 맑은 물이 내가 있었다
+original 꽤 오랜 시간이 지났다고 생각됐다
+decode  꽤 오랜 시간이 지났다고 생각됐다
+original 한 발이 물 속에 빠졌다
+decode  한 발이 몰 속에 빨졌다
+original 나무꾼이 울부짖으며 따라갔지만 아무 소용이 없었지요
+decode  나무꾼이 울부짖으며 따라갔지만 아무 소영이 없어지요
+original 들 작품은 그의 인생을 바꿨고 오늘의 그를 있게 했다
+decode  이를 삽붐은 그헤 이쟁을 가고고 운의 그를 엘 댔다
+original 이리하여 밤이 어둡기를 기다려 찾아온 것이 울보 어린이네 집이었습니다
+decode  이리하여 밤이 어둡디를 기다려 찾아온 엇이 울버 어린이네 집이었습니다
+original 우리 이웃 자리에는 여학생 대여섯이 자리를 잡고 있었다
+decode  우리 이웃 자리에는 여학생 대엿시 자리를 잗고 있었다
+original 런 우려가 있었다면 재판을 십 일 년간 끌어왔는데요
+decode  그러론 우려 섰사마년 지 판시
+original 는 종로에서 십 육 십 칠 십 팔 대 내리 삼선했습니다
+decode  어 종보오애서 경
+original 그러면 집에 갈 차비도 없겠네
+decode  그러면 지에 찰 차비도 어넸네
+original 이렇게 말하며 자꾸 얼러도 어린애는 도무지 듣지를 않았습니다
+decode  이렇게 말하며 자꾸 얼러도 어린애는 도무지 듣지를 않았습니다
+original 내 고향은 경기도 안성군 양성면에 있는 난실리라는 산골이다
+decode  내 고향은 경기도 안성군 양엉션에 있는 난실리리는 산골이다
+original 선녀들은 너무 아름다웠어요
+decode  선녀들은 너무 하름다웠어요
+original 래야 아내가 내게서 위로와 힘을 얻을 수 있을 거라고 생각했거든요
+decode  그래하 안내가 안애서 이오호 어 우수 이이 거가가 개제
+original 그리고 이제는 천천한 걸음이었다
+decode  그리고 이제는 천천한 걸음이었다
+original 그리곤 오후를 개울에서 알몸으로 논다
+decode  그리곤 오후를 개울에서 알몸으로 논다
+original 개인이 대뜸 삼천 백 만원을 찻값으로 더 내놓으라고 요구했기 때문이다
+decode  중지이 일으 성을 마으으을 슷스스로
+original 내 한턱 씀세
+decode  내 한 씀세
+original 그래도 어린애가 울음을 그치지 않으니 엄마는 더 큰 목소리로 외쳤습니다
+decode  그래도 오린애나 울음을 그치지 않느니 엄마는 더 큰 외었습니다
+original 겨울이 와도 얼음이 얼지 않으면 시냇가는 황량합니다
+decode  겨울이 과도 얼음이 얼지 않으면 시냇가는 황량합니다
+original 제가 잡아 오겠습니다 용왕님
+decode  제갈 아오 오습니나 용웡님
+original 아들이 돌아온다
+decode  아들이 도아온다
+original 좀 더 깨끗이 만들어 놓고 서로 즐겁게 보낼 수도 있을 텐데
+decode  좀 더 개끗이 만들어 놓고 설로 질겁게 보낼 소소 있틀 텐데
+original 잠깐 교무실에 다녀온 사이다
+decode  삼까 굥무세으 다나온 사이다
+original 이러한 삶이 모여서 이루는 전체적인 양상을 현실이라고 한다
+decode  이러한 삶이 모려서 이루는 전체적은 양상을 현실이라고 하다
+original 놀리고 달아나는 토끼를 자라는 멍청히 바라보고만 있었답니다
+decode  놀리고 달아나는 토끼를 자라는 멍청히 바라보고만 있었답니다
+original 그런데 어느 날이었어요
+decode  그런데 어느 날이어요
+original 한국인은 한 걸음 더 나아가 숭늉을 마시는 풍습을 창조해 냈다
+decode  걸음 더 나아가 중눙을 마시는 퐁습을 성잰다
+original 어서 가자
+decode  어서 가자자
+original 이리하여 밤이 어둡기를 기다려 찾아온 것이 울보 어린이네 집이었습니다
+decode  이리하여 밤이 어둡기를 디다려 찾아온 것이 울오 어린이네 집이었습니다
+original 소 한 마리 먹이기가 소년은 늘 소원이었다
+decode  소 한 마리 머이기가 도련은은 늘 오원이었다
+original 지쳐 서 있는 우리 세 사람 뒤쪽에서 걸걸한 목소리가 들렸다
+decode  지쳐 서 있는 우리 세 사람 컬컬
+original 이 굴 속에는 오래 전부터 늙은 너구리가 살고 있다고 했다
+decode  이 굴 속에는 오레서 부터 늙은 너구리가 살고 있다고 했다
+original 공사하느라 파 놓은 구덩이에 빠져 버린 것이었다
+decode  공사하느라 파 놓운 구덩이에 빠져 버린 것이었다
+original 자기도 모르게 돌아섰다
+decode  자기도 모르게 돌아섰다
+original 오히려 아주머니께 고맙지요
+decode  오히려 아주머니께 고맙지요
+original 그렇게 순수하게 심혈을 기울여 공예 미술품을 만들어 냈다
+decode  그렇게 순수하게 심혈을 기울여 공예 미술품을 안들어 냈다
+original 나무꾼은 미리 준비해 온 옷을 선녀에게 주었어요
+decode  나무꾼은 무리 준비해 온 옹을 선녀에게 주었어
+original 제가 잡아 오겠습니다 용왕님
+decode  제가 잡아 오겠습니다 용왕놤
+original 숭늉이나 누룽지 맛을 모르는 사람들 이것이 바로 지금의 신한국이다
+decode  숭눙이나 누룽지 맛을 머르는 사람데 잇것시 바로 지근의 한북이다
+original 그러나 한국인에게는 또 하나의 과정이 기다리고 있다
+decode  그러나 한국인에게는 또 하나의 과정이 기다리고 있다
+original 가령 사람이 월세계에 가서 살려고 그 방법을 연구하고 있다고 하자
+decode  가려 사람이 월세계에 가서 살려고 그 방법을 연구하고 있다고 하자
+original 소년은 이 갈꽃이 아주 보지 않게 되기까지 그대로 서 있었다
+decode  소년은 이 갈꽃이 아주 보지 않게 되기까지 그댈로 서 있었다
+original 그 빨고 난 오수는 반드시 두엄 터에 버림으로써 거름으로 보탰던 것이다
+decode  그 빨고 날 오수는 반드시 두엄 머에 버림으로 거름으로 보탰던 것이다
+original 물건이란 제대로 만들어야지 깎다가 놓으면 되나 
+decode  물건이난 제재로 만들어어지 깎다가 노은 되
+original 사실은 네 간으로 용왕님의 병을 치료하려고 한단다
+decode  사실은 네 간으로 용왕님의 병을 치료려고 한단다
+original 너 녀석한테 반했지 애숭이를 빨문 죄 된다
+decode  너 너 반했지 애숭이를 빨면 죄 된다
+original 화중지병이지
+decode 화중지비이지지
+original 중지병이지
+decode 화중지비이지지
+original 그러면 토끼선생은 왜 그렇게 귀가 길어요
+decode  그러면 터어선생은 왜 그렇게 귀가 길아요
+original 보다 맑고 보다 밝은 내일의 꿈을 키우면서 해님처럼 웃자
+decode  보다 맑고 보다 밝은 내일의 꿈을 키쿠면서
+original 토요일이었다
+decode  토요일이었다
+original 오누이는 의심스러웠지만 그만 문을 열어 주고 말았어요
+decode  오누이는 의심스러웠지만 그만 문을 열어 주고 마았어요
+original 제가 잡아 오겠습니다 용왕님
+decode  젭게 잦 오겠습니다 용왕님
+original 또 왜 엄마 손으로 꼭 밥을 퍼 주셨는지도
+decode  또 왜 엄마 손으로 꼭 밥을 퍼 주셩니디
+original 지만 이마저도 불편한 몸 탓에 남들만큼 하지는못해 생계에 큰 보탬이 되지 못합니다
+decode  하지만 불편하 못삿에 마아지는 낸
+original 그날도 무심히 퇴근길에 신문을 사고 나서 동전을 찾는데 동전은커녕 아예 지갑이 없었다
+decode  그난도 무심이 탱근질에 신문을 사고 나서 동진을 찾는데 아아 없었다
+original 발목 하나를 약간 접쳤을 뿐 크게 다친 데는 없었다
+decode  발목 가나리 약간 접첬을 뿐 크건 가친 다는 없었다
+original 왜 그래요 돈이 없어요
+decode  왜 그래요 돈이 없어요
+original 눈으로 보아서는 다섯 번을 쪘는지 열 번을 쪘는지 알 수가 없다
+decode  눈으로 보아서는 다섯 번을 쪘는 벙을 쪘는지 알 수가 없다
+original 나는 네가 시험 점수나 가지고 발발 떠는 그런 소녀이기를 바라지 않는다
+decode  나는 내가 점수나 땃든 그런 노녀이기를
+original 새끼 때 귀엽지 않은 짐승이 있을까마는 갓난 송아지만큼 귀여운 짐승도 없을 것 같았다
+decode  새끼 때 위엽지 않은 짐승이 있쓸가마는 갓난 송아지마 뀌겨연 짐슴도 엇 겄 었다
+original 이 때 방안의 엄마는 여러가지로 궁리하다가저기 곶감이 있구나라고 말했습니다
+decode  이 때 방안의 엄마는 여러가지로 궁리하다가자기 웄가라고 말했흡니다
+original 잠깐 교무실에 다녀온 사이다
+decode  잠깐 교무실에 다녀온 사이다
+original 젊은 경찰 세 명이 우르르 내렸고 모두 힘을 합해 차를 밀었으나 소용없었다
+decode  젊은 경찰 세 명이 우르르 내렸고 무도 임을 합해 차를 일었으나 소송없었다
+original 죽는 줄만 알았던 토끼는 보석까지 얻게 되자 기분이 너무 좋았어요
+decode  죽는 줄문 알았던 토끼는 보석까지 었게 되자 기부이 넘무 좋았어요
+original 하지만 아주머니들은 싫은 기색이 아닙니다
+decode  하지만 아주머니들은 싫은 기석이 아닌니다
+original 갑자기 물을 움켜 낸다
+decode  갑자기 물을 움켜 녀다
+original 천만의 말씀
+decode 청망아 마
+original 만의 말씀
+decode 청망아 마
+original 그런데 꼭 한 가지 지키셔야 할 일이 있어요
+decode  그런데 메 할 하하 지식셔얄 할
+original 러단이 파견됐으니 우리국민 위해 시도가 있는 것이다
+decode  달러넌
+original 다 건너가더니만 홱 이리로 돌아서며 이 바보
+decode  가 건너가더니만 홱 돌아서며 이 바보
+original 나는 네가 시험 점수나 가지고 발발 떠는 그런 소녀이기를 바라지 않는다
+decode  나는 네가 시험 점수나 가지고 발발 떠는 그런 소녀이기를 않니 않는다
+original 우물에 비친 오누이를 발견한 호랑이는 나무위로 올라오려고 어슬렁거렸어요
+decode  우물에 친 오누으를 발간한 호랑이는 나무위로 올라오려 슬슬경겨렸어요
+original 그리고는 벌떡 일어나 팔짝팔짝 징검다리를 뛰어 건너간다
+decode  그리고는 벌떨 딜어나 위어 건간다
+original 왼쪽 팔은 조끼 주머니에 아무렇게나 쑤셔 넣고 있는 것이다
+decode  왼쪽 팔은 조끼 무머니네 아무렇게 수셔 넣고 있는 것이다
+original 제법 엄지손가락만씩한 피리도 여러 마리였다
+decode  저법 범지손가라란씩싼 피리도 며러 마리렸다
+original 가령 대천이나 만리포 송도 해운대 강릉 등지의 해수욕장을 생각해 보자
+decode  가령 대천이나 만리포 송도 강릉 등지의 해수욕장을 생객 보자
+original 산모퉁이를 돌아서면 이제 들판이었다
+decode  산모퉁이를 돌아서면 이지 재판이었다
+original 려 주세요
+decode 
+original 되도록이면 적게 먹는다
+decode  되도록이연 적게 먹는다
+original 창문을 열면 그 신선한 공기 심장까지 냉수를 마시는 느낌이다
+decode  창운을 열면 거 신선한 공기 심장까지 냉수를 마시는 느낌이다
+original 이 돌래 영감은 멱감는 아이들이 영 질색이었다
+decode  이 돌래 영담은 막감는 식이었덨다
+original 춥춥스럽게 날아드는 파리 떼도 장난꾼 각다귀들도 귀찮다
+decode  춥춥츠럽게 날아드는 파리 떼도 장난꾼 각다귀들 갆다
+original 이 굴 속에는 오래 전부터 늙은 너구리가 살고 있다고 했다
+decode  이 구 속에는 오래 전부터 늘은 너우리가 살고 댔다
+original 사람마다 다른 얼굴을 하고 있는 것은 어째서 그럴까
+decode  사람마다 다른 얼굴을 하고 있는 것은 어째서 그럴까
+original 로커도 남한에서 여섯달만 머무르면 여권이 나온다고 꼬드겼다
+decode  눒
+original 오전 네 시부터 열 두 시까지 산장에서 일을 한다
+decode  오전 디까지
+original 안전 표시를 제대로 하지 않은 누군가를 비난하며
+decode  안너 제도로 않은 않은 난하며
+original 조금 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 씻습니다
+decode  조근 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 싯습니다
+original 세상에 간을 떼어 놓고 다니는 동물이 어디 있니
+decode  세상에 간을 떼어 놓고 다니는 동물이 어디 있니
+original 집으로 오는 길에 호랑이에게 그만 잡아먹히셨기 때문이죠
+decode  집으로 오는 길에 호랑이에게 그만 매매이요
+original 기차도 전기도 없었다
+decode 
+original 나무꾼 아저씨
+decode  나무꾼 아저씨
+original 더 깎지도 못하고 깎아나 달라고만 부탁했다
+decode  더 깎지도 못하고 깎아 달라고만 부타 바탁했다
+original 소설을 중심으로 문학과 삶 혹은 현실과의 관계를 더 자세히 살펴보기로 한다
+decode  그설을 중심으로 문박과 상 훅은 혀실의 관기을 더 차스이 싯새고르 을안다
+original 갑갑하고 지루하고 인제는 초조할 지경이다
+decode  다 손이 디감 하을 더어이여
+original 그러다가 깜짝 놀라 일어나고 말았다
+decode  그러다가 깜짜 앙 일어서 말았닸다
+original 타이 넥타이 과거와 현재라는 흥미 있는 기사에 대해 감사를 표하고 싶습니다
+decode  내단은 내타이 한제라는 하하
+original 잠깐 교무실에 다녀온 사이다
+decode  잠깐 교무실에 다녀온 사이다
+original 가 하는 일이 얼마나 중요한지 알았기 때문에 늘 조심스럽게 일했습니다
+decode  내가간 느니 엉아가 줌아하자 갰 으
+original 거나해짐을 따라 계집 생각보다도 동이의 뒷일이 한결같이 궁금해졌다
+decode  거나해짐을 따라 뷔일이 하결같이티 걱극어
+original 숭늉이나 누룽지 맛을 모르는 사람들 이것이 바로 지금의 신한국이다
+decode  숭늉이나 누룽지 맛을 머므는 사람들 일것이 바로 지금의 신한국이다
+original 품의 매력은 작가의 창조성이 중요한 만큼 오히려 관여하는 사람이 적을 수록 유리하다
+decode  병은 작가이
+original 부락스런 녀석들이라 어쩌는 수 있어야죠
+decode 부락스런 녀석들이라 어쩌는 수 이에어죠
+original 락스런 녀석들이라 어쩌는 수 있어야죠
+decode 부락스런 녀석들이라 어쩌는 수 이에어죠
+original 나무꾼은 사슴을 얼른 숲 속에 숨겨 주었어요
+decode  나무꾼은 사슴을 얼른 술 속에 숨겨 주었어요
+original 그 대신 아침에 일찍 일어난다
+decode  그 대신 아쳄에 일찍 일어난다
+original 제법 엄지손가락만씩한 피리도 여러 마리였다
+decode  죄법 피도도 이러 말리였다
+original 물 창고가 헐리는 것을 목격한 한 사람은 이렇게 개탄했다
+decode  곰을 창고 으리는 것으 볖편
+original 차가 빠졌어요
+decode 차가 빠졌어요
+original 가 빠졌어요
+decode 차가 빠졌어요
+original 기짝이나 장딴지 같은 데를 총알이 약간 스쳐 갔을 따름이겠지
+decode  볼기짝이나 장딴지 같튼 든드를 총알에 약간 스쳐
+original 어려서 내가 놀던 그 물 속에서
+decode  어려서 내가 놀던 그 물 속에서
+original 소 한 마리 먹이기가 소년은 늘 소원이었다
+decode  소 한 아리 먹이지가 소년은 늘 소원이었다
+original 검게 탄 얼굴이 그대로 비치었다
+decode  검게 탄 알굴이 그내 비치었다
+original 여타의 동물은 이상이라는 것이 없다
+decode  여다의 동무르 것이 없다
+original 장사란 탐탁하게 해야 되지
+decode  장사란 탐타 보라게 하
+original 하지만 호랑이를 태우고 한참 하늘로 올라가던 동아줄이 갑자기 뚝 끊어지는 것이었어요
+decode  하지만 호랑이를 텨우고 한찬 하늘로 올라가던 동우지이 갖자기 뚤 저지느 거었었어요
+original 원은 백 마흔 한 건의 소송 중 백 스물 한 건에 대해 사실혼을 인정했다
+decode  마안 당
+original 계집이 다 무어야
+decode  계집이 다 무어야
+original 면적으로는 청와대와 김영나 박물관장 사이의 갈등이다
+decode  그은 청하해와 기려
+original 나귀를 몹시 구는 녀석들을 그냥 두지는 않을 걸
+decode  나가를 녀석들을 그냥 두지는 않을 걸
+original 어흥너희들을 잡아 먹겠다
+decode  거흠
+original 삼대 독자가 죽다니 말이 되나
+decode  산대 독아아아 줃더느
+original 도권 의원 그룹은 자신들이 내분의 최대 피해자가 될 것이란 우려도 크다
+decode  초보완 안 근
+original 코피였다
+decode  코피였다
+original 가을이 오면 냇가는 조용해집니다
+decode  가을이 기오년 냇가는 집니다
+original 밥솥 한쪽에 엄마가 드실 찬밥 덩어리가 동그마니 들어 있었던 것이다
+decode  밥솥 한쪽에 엄마가 디실 찬밥 덩어리가 동그마너 있던 것이다
+original 이렇게 말하며 자꾸 얼러도 어린애는 도무지 듣지를 않았습니다
+decode  이렇게 말하며 자꾸 얼러도 어린애는 도무지 듣지를 않았습니다
+original 사슴의 말을 듣자 나뭇꾼은 너무 신기한 일이어서 눈이 휘둥그레졌어요
+decode  사심의 말을 듣자 나뭇군은 너무 신기한 일일어서 넌이
+original 새벽 네 시면 산새 소리가 산중에 찬다
+decode  새벽 네 시면 산새 소리가 산중에 찬다
+original 흐흐흐
+decode 흐흐흐
+original 흐흐
+decode 흐흐흐
+original 용왕님은 자라를 위하여 토끼 그림을 그려 주었습니다
+decode  용왕님은 자르를 위하여 토끼 그림을 그려 주었습니다
+original  단계에선 한 단계 성적과 면접 구술고사 점수를 합산해 뽑는다
+decode  부단 애 을 성적거가 면저 주주고 전수를
+original 내 한턱 씀세
+decode  내 한탁 쓰
+original 나무꾼은 땅 바닥에 털썩 주저앉아 한숨을 쉬며 사슴이 부탁한 말을 생각했어요
+decode  나무꾼은 땅 바닥에 얼썩 주저안아 한숨을 쉬며 사슴이 부탁한 말을 수갰어요
+original 그런데 어느 날 밤이었습니다
+decode  그런데 언나 발 밤이었습니다
+original 그러나 소설가는 이러한 사실을 기록하는 데 그치지 않는다
+decode  그러나 소설가느 이러한 혀실을 히긱하 노느 그치지 않는다
+original 그리곤 오후를 개울에서 알몸으로 논다
+decode  그리곤 오후를 모는다
+original 귀신이 온다 귀신이
+decode  귀신이 온다 다 뒤신이
+original 겉치레에만 정신을 파느라고 속을 다스릴 줄 모르단 말이야
+decode  겉치헤 정신은 판느라고 속을 줄 주므니 만이야
+original 나무꾼은 사슴이 일러 준 대로 날개옷 한 벌을 감추어 버리고 숲 속에 숨어서 기다렸어요
+decode  나무꾼은 사슴이 일러 준 누로 엿 벌을 검처어 버로고 옥 섯서 디었어요
+original 나무꾼은 날개옷을 보고 싶어하는 선녀가 가여워 감춰 두었던 날개옷을 꺼내 주었어요
+decode  나무꾼은 날개옷을 보고 싶잎하는 선녀가 가여워 감춰 두었던
+original 너희 중에 누가 토끼의 간을 구해 올 수 있겠느냐
+decode  너희 중에 누가 토끼의 간을 구해 올 시
+original 어제처럼 개울을 건너는 사람이 있어야 길을 비킬 모양이다
+decode  어제서러 개울을 건너는 사람이 있어야 길을 비킬 모양이다
+original 우물에 비친 오누이를 발견한 호랑이는 나무위로 올라오려고 어슬렁거렸어요
+decode  주물에 비친 오눈이글 발견흔 호랑이는 나무위로 올로오려고 거거거겼여요
+original 연소패들을 적수로 하구야 대거리가 돼야 말이지
+decode  인소파을 작수로 하구 애대 대러가 왜미지
+original 무슨 일이 있어도 선녀가 아기를 셋 낳을 때까지는 절대로 날개옷을 보여 주시면 안 돼요
+decode  무슨 일이 있어도 천녀가 아기를 셋 삿을 때까지는 절대로 날개옷을 오여 주시
+original 호랑이는 도끼로 나무를 찍어가며 점점 오누이에게 올라오고 있었어요
+decode  호랑이는 도끼로 나무를 찍거가며 점점 오누이에 올아고 있었어요
+original 그것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode 그것은 참고 기가릴 줄 아는 사람만이 마실 수 있는 물이지요
+original 것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode 그것은 참고 기가릴 줄 아는 사람만이 마실 수 있는 물이지요
+original 집에 있는 것보다 참 좋다는 것이다
+decode  집에 있는 것도라 참 촣다는 것이다
+original 그 꼴이 하도 우스워 돌아서서 칠판을 향해 웃고 나니 까르르르 폭소가 터진다
+decode  그 꼴이 하도 우스워 돌아서서 칠판을 향해 웃고 나니 까를르르 폭사 터진다
+original 소년은 개울가에서 소녀를 보자 곧 윤 초시네 증손녀라는 걸 알 수 있었다
+decode  소년은 겨울가가어 소녀를 보자 곤 초 시네 었다
+original 그렇지두 않을 걸
+decode 그렇지두 않을 걸얼
+original 렇지두 않을 걸
+decode 그렇지두 않을 걸얼
+original 저에게 사람을 믿고 사랑할 수 있는 법을 가르쳐 주셨으니까요
+decode  자에게 사람을 믿고 사랑할 니는 법을 가려쳐 져였시니아
+original 용왕님 토끼를 잡아 왔습니다
+decode  용왕님 토끼를 잡아 왔습니다
+original 그건 결코 미인이 아니야
+decode  그건 결코 미인이 아니야
+original 른 변호사는 바람을 피우고도 뻔뻔하게 행동하는 경우는 예전보다 눈에 띄게 늘었다
+decode  다른 다랑어은 바음을 기우 갈도아 난 저어은
+original 들은 자진적으로 시간을 내서 자신들이 배워 알게 된 것을 다른 사람들에게 알려 줍니다
+decode  으느는 자승엉오 위애 알리
+original 러나 언제부터인가 강아지들이 점점 이상한 행동을 보이기 시작했다
+decode  그러나 오주저이가가 아이디
+original 내 고향은 경기도 안성군 양성면에 있는 난실리라는 산골이다
+decode  내 고향은 경기도 안성군 양성만에 있는 난실리라는 산골이다
+original 그리고는 벌떡 일어나 팔짝팔짝 징검다리를 뛰어 건너간다
+decode  그리고느 볼떡 일아나 팔짝짤짝 징검다리를 뛰어 건너간다
+original 소 규정과 절차에 맞는 업무 처리를 중시하던 그는 군 내부에 문제를 제기했다
+decode  뗭서 히정과
+original 소년은 개울가에서 소녀를 보자 곧 윤 초시네 증손녀라는 걸 알 수 있었다
+decode  소년은 개울가에서 소며를 보자 고 윤치네 여다는 갈 수 었더
+original 그러나 너구리보다도 아이들이 먼저 연기를 먹고 물러났다
+decode  그러나 머구리보다도 아이들을 먼저 연기를
+original 그날 이후 나는 신문을 살 때마다 꼬박꼬박 광화문 지하도를 찾게 되었다
+decode  그날 이후 나는 신문을 살 땟마다 까박깍바 항화믄 재래들 찾게 되었다
+original 구증 구포란 찌고 말리기를 아홉 번 한 것이다
+decode  구증 우포란 찌고 말리기를 번 헌 것이다
+original 호랑이에게 내려주신 동아줄은 썩은 동아줄이었거든요
+decode  호랑이게게 누주신 숭앙울은 썬언 옹아줄이었거으요
+original 그 진눈깨비가 그해 첫눈이었지만 내겐 너무나 야속했고 짜증스럽기만 했다
+decode  그 진눈깨비가 그해 첫눈이었지만 내겐 너무나 야속했고 짜장스스리만 맸다
+original 내일은 진부와 대화에 장이 선다
+decode  내일은 진부와 대화에 장이 선다
+original 히 올해 들어 성범죄 공무원에 감경 비율이 크게 늘어났다
+decode  공무와낸 간경
+original 녀는 그 과정을 힘들어 하지 않고 재밌게 받아들인다
+decode  그년는 구 들얼 어안 고 미이
+original 죽는 줄만 알았던 토끼는 보석까지 얻게 되자 기분이 너무 좋았어요
+decode  죽는 줄만 알았던 토끼는 보석까지 얻게 되자 기분이 무우 좋았어요
+original 일하시기 힘드시죠
+decode  일하시기 임드시죠
+original 감사합니다 하고 소리치자 아저씨는 호탕하게 웃으며 손을 내젓고는 차를 돌렸다
+decode  감자합니다 하고 소리치져 아저씨는 호탕가게 웃으며 손을 내젓고는 차를 돌렸닸
+original 용왕님의 병을 고칠 수 있는 것은 토끼의 간밖에 없어요
+decode  용왕니의 바으 모칠 수 있는 것은 토끼의 간밖에 없어요
+original 저봐라 창가에 호랑이가 왔다
+decode  저버으 작가안 홍옹이아 왔다
+original 이를 본 호랑이도 똑같이 하나님께 기도를 했어요
+decode  이를 본 라으도 똑같지 하나나메 기도롤 했에요
+original 러한 관습에는 화합을 중시하는 카메룬의 문화가 스며 있습니다
+decode  이언반 먼스는 하풀을 주지어는 가믕네 부가아
+original 아무튼 늙은 너구리가 조무래기들에게 그리 호락호락 잡힐 것 같지는 않았다
+decode  아루 읅은 떠부리가 주무래기데게 그그 호락로라 삽씨 가지 짆났다
+original 소 한 마리 먹이기가 소년은 늘 소원이었다
+decode  소 한 마리리 머이가 소녀은 늘 웡이었다
+original 오히려 아주머니께 고맙지요
+decode  오니가 아주머니께 고맙지요
+original 소년은 개울둑에 앉아 버렸다
+decode  소년은 개굴울에 앉아 버렸다
+original 허 생원은 모르는 결에 낯이 뜨거워졌다
+decode  허 생원은 모르는 겔에 낯이 뜨거궈졌다
+original 세상에 간을 떼어 놓고 다니는 동물이 어디 있니
+decode  세산에 갈을 떼어 놓고 아이는 동물이 어디 있니
+original 나무꾼은 미리 준비해 온 옷을 선녀에게 주었어요
+decode  나무꾼은 미리 준비오 옷을 손녀에게 주었어요
+original 얼마 후 선녀들은 목욕을 끝내고 자기의 날개옷을 찾아 입기 시작했어요
+decode  얼마 후 선녀들은 목욕을 끝내고 자기의 날개옷을 찾자
+original 생각할수록 어깻바람이 날 일이다
+decode  생각하수러 어개바라인 닐 일이다
+original 그러나 그 꽃은 누굴 위해 핀 것이 아니고 스스로의 기쁨과 생명의 힘으로 피어난 것이래
+decode  그러나 그 꽃우는 구 위애 핀 것이 아니고 스스로의 기쁨와 생명의 히으로 피이니 어이이
+original  사무총장은 다른 항공사들 같으면 곤란하다 우리도 힘들다고 했을 만한 상황이었다
+decode  보사 나는 종을을 다으 지으 우기드
+original 그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 쓴다
+decode  그러나 슬기롭고 아름다운 소녀기기를 바려면서 글을 쓴다
+original 옛날 어느 산골마을에 울기를 잘하는 어린애가 있었습니다
+decode  심은리 강이이 날라 갈 걸믈에에 울이를 였읍니다
+original 자기도 모르게 돌아섰다
+decode  자기도 모르데 돌아섰다
+original 조금 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 씻습니다
+decode  조금 아래쪽 징검다리 옆에서는 동네 아주머니들이 봄나물을 씁습니다
+original 지금은 그런 말조차 없다
+decode  지금은 그런 말좇차 없다
+original 저봐라 창가에 호랑이가 왔다
+decode  저버 차까에 호하기가 왔다
+original 그러나 한국인에게는 또 하나의 과정이 기다리고 있다
+decode  그러나 한국인에게는 또 하나의 과정이 기다리고 있다
+original 착실한 녀석인 줄 알았더니
+decode  착실한 녀석인 줄 알았더니
+original 아이 이를 어쩌지요
+decode  아이 이를 어쩌지요
+original 너무나 기분이 좋아서 싱글벙글 했지요
+decode  너무나 기븐이 좋아서 싱글벙블 했지요
+original 런데 간 김에 우리 내외가 피검사 등 건강검진을 했다
+decode  그런데 하미에 무래대 그 비이 즈애
+original 한국인은 한 걸음 더 나아가 숭늉을 마시는 풍습을 창조해 냈다
+decode  한국인은 더 나가가 눙늉을 마시는 뭉습을 창조해 했다
+original 나와 함께 용궁에 가서 삽시다
+decode  나와 함께 용궁에 가서 삽시다
+original 먹이 송아지를 안고 얼굴을 비비대 보면 털이 비단결보다도 더 보드랍고 매끈했다
+decode  젖먹이 송안지를 안고 얼굴을 비비대 보면 털이 근했다
+original 겉치레에만 정신을 파느라고 속을 다스릴 줄 모르단 말이야
+decode  겉치레에만 정신을 파느라고 속글 다들릴 줄 르단 말이야
+original 도로변에 먼지를 부옇게 덮어쓰고 도사리고 앉아 있는 초가집은 주막이었다
+decode  도로변에 먼지를 부옇게 덮어쓰고 도시리고 앉아 있는 초가집은 주마었닸
+original 허 생원은 계집과는 연분이 멀었다
+decode  허 생원야 개집과는 연분이 멀었다
+original 어머니를 잡아먹은 간교한 호랑이는 어머니흉내를 냈습니다
+decode  어허니를 잡아먹근 호랑이는 어머히링늘 냈습니다
+original 새들도 짐승들도 착한 나무꾼의 친구들이라 나무꾼은 조금도 외롭지 않았어요
+decode  새들오 진승들도 착한 나무꾼의 치구딜이라 나무꾼은 조고도 외롭지 않았어요
+original 장날 저녁은 정해 놓고 계집의 고함 소리로 시작되는 것이다
+decode  장날 저녁윽 정해 놓고 계집으 오고 소리로 시작되는 것이다
+original 자 내 등에 타
+decode  자 내 든에 타
+original 객의 참여와 소통을 중시하는 문화민주주의 작가답게 그는 그렇게 한 마디 남겼다
+decode  환기에 자려와 어조을 칭시하는
+original 기차도 전기도 없었다
+decode  기차도 전기도 었었다
+original 용왕님은 토끼에게 많은 보석을 주었어요
+decode  용왕님은 토끼에게 많은 보설을 주았어요
+original 저는 사냥꾼에게 쫓기고 있어요
+decode  저는 사냥꾼에게 쫓기고 있어요
+original 언젠가 숭늉이 무엇이냐는 일본 출판사 측의 질문을 받고 진땀을 흘린 적이 있다
+decode  언년가 궁늉이 무엇이냐는 일본 출판어 측의 줄문을 받가 흔 적이
+original 욕지거리를 잘 하는 미인을 우리가 상상할 수 있겠어
+decode  욕지거리를 잘 하는 미인 상상할 수
+original 꽃가지를 스쳐 오는 바람처럼 향기롭고 아름다운 말만 써도 다 못 하고 죽을 우리인데
+decode  꽃가지를 스쳐 오으 마람차럼 형기릅고 아름다운 알 다다 다 다
+original 이 집 눈썹이 짙은 여편네와는 예사로 농을 주고받는 사이였다
+decode  이 집 눈썹이 짙은 옆펴에아는 예사르 옹을 주고가느 사였다
+original 그렇기 때문에 아름다움은 또한 슬기로움과 서로 이어져야 해
+decode  그렇기 때문에 아름다움은 또한 슬기로우과 서로 이어져야 해
+original 남은 역대 대선에서 특정 후보에게 표를 몰아주는 전략적 선택을 해왔다
+decode  스으서 적정오 혈
+original 그것이 곧 네 자신일 거다
+decode  그것이 곧 네 제 자신을 거다
+original 그렇지두 않을 걸
+decode 그렇지두 않을 걸
+original 렇지두 않을 걸
+decode 그렇지두 않을 걸
+original 아이는 곶감이라는 말을 듣고는 지금까지 울던 울음을 뚝 그쳤습니다
+decode  아이는 곶감이라는 말을 듣고는 지늠까지 울단 울움을 뜨 그쳤습니다
+original 나는 네가 시험 점수나 가지고 발발 떠는 그런 소녀이기를 바라지 않는다
+decode  수나 가지고 발발 떠는 그런 소녀이기를 바라지 않는다
+original 발목 하나를 약간 접쳤을 뿐 크게 다친 데는 없었다
+decode  발목 하나를 약간 적처을 쁠 뿌크 데는 없었다
+original 저러다가는 방망이는 다 깎여 없어질 것만 같았다
+decode  저러다라는 방망이는 다 깎여 없어질 것만아 았닸다
+original 그 대신 아침에 일찍 일어난다
+decode  그 개신 아침이 일찍 얼어난다
+original 계집 목소리로 문득 생각난 듯이 조 선달은 비죽이 웃는다
+decode  계집 목소리로 문더 생각난 듯이 조 달날른 비주 는다
+original 그러나 그 가능성만은 충분히 보이고 있다
+decode  그러나 그 가능성만은 충분히 보이고 있다
+original 가을이 오면 냇가는 조용해집니다
+decode  가을이 오면 냇가는 조묭해집니다
+original 하지만 아이들은 투명한 가을햇살을 받으며 냇가에 앉아 참게와 줄다리기를 시작합니다
+decode  하지만 알이들은 투명한 가을읏살을 발으며 냇가에 앉아 참게와 둘다리기를 시잡합니다
+original 되도록이면 적게 먹는다
+decode  되도록이면 적게 먹는다
+original 이 때 이것을 해결하는 방법에는 두 가지가 있다
+decode  이 때 이것을 핼혈하는 방벙베는 두 가지가 있다
+original 싫었다
+decode  싫었다
+original 오누이는 의심스러웠지만 그만 문을 열어 주고 말았어요
+decode  오누이는 의슴스러웠지만 그만 문을 을어 주고 말았어요
+original 사슴은 인사를 한 후 이렇게 말했어요
+decode  사슴은 이사를 하 후 말했어요
+original 이렇게 매년 되풀이되는 것이 나의 피서 생활이다
+decode  이렇게 매는 겨풀이여는 것이 피서 생활이다
+original 이상을 위하여 산다
+decode  아삭을 위여여 산다
+original 이 날은 소녀가 징검다리 한가운데 앉아 세수를 하고 있었다
+decode  이 날은 소녀가 징검다리 한간운 앉아 세수르 하고 있닸다
+original 저를 어서 풀어 주세요
+decode  저를 어서 풀어 주세요
+original 문에 대통령은 또 한 번 국민 앞에 무릎을 꿇었습니다
+decode  대무에 도 해
+original 지나치는 사람이 없었기에 망정이지 누가 보았더라면 큰 웃음거리가 될 뻔했었다
+decode  시나치는 사람이 없썼기에 망정이지 우가 보았더라면 큰 웃움그이기 덜 했닸
+original 제가 그만 깜빡 잊고 간을 숲 속 바위틈에 두고 왔는데요
+decode  젱가 금마간 바오 한을 숙 속 소위에 두으 두고 환네요
+original 오전 중은 산장에서 작업을 하고 오후 개울로 나간다
+decode  오전 중은 잔장에서 작업을 핬고 오후 개울로 나간다
+original 이리 도망온 사슴을 못 보았소
+decode  이리 사슴을 모 보았소
+original 그 아래에서는 은어 떼가 노란 꽃잎을 바라보며 놀다가 어느새 온몸이 노랗게 물듭니다
+decode  그 아래에서는 우어 떼따 노우라 곷이을 바라보며 놀다가 어느새 오몸이 노랗게다
+original 왜 이러세요 
+decode 
+original 어디 인간이 즐거울 수 있는 장소라 하겠는가
+decode  어디 인간이 실굴울 수 있는 장소라게
+original 암놈을 보고 저 혼자 발광이지
+decode  아놈을 보고 저 혼자 발광이지
+original 가령 대천이나 만리포 송도 해운대 강릉 등지의 해수욕장을 생각해 보자
+decode  가형 대천이라 만리포 송도 해은대 강릉 등지의 애승욕장을 생삭가 보자
+original 가엾게도 사슴은 오들오들 떨고 있었어요
+decode  가엾게도 사슴은 으으으 있었어요
+original 거기에는 정말 아름답고 맑은 연못이 있었어요
+decode  거기에는 정말 아름답고 맑은 엿밋이 있었어요
+original 장과 육아를 함께하는 직장맘 이모씨는 출산한지 한 달 만에 다시 직장으로 향해야 했다
+decode  직잔 인거을 한바하나 지장마 미이는 잔을 하
+original 그러다가 좀더 무더워지면 내 고향 잔잔한 개울을 찾아 내려간다
+decode  그러다가 좀더 무더워지면 노 고향 잔잔한 길울을 칮아 녀려다다
+original 눈은 여전히 내렸고 교통 체증도 여전했고 연극 연습에는 어처구니없이 늦어 버렸다
+decode  불은에 보터 쳐오 여전쟀고 연은 은읍여는 얼처누너 어였다
+original 약삭빠르게 떠나는 패도 있었다
+decode  악사 빠아락더너는 패도
+original 신문 값은 물론이거니와 집으로 갈 버스비조차 없어 쩔쩔매고 있는데 아주머니가 물었다
+decode  신문 값은 물론이거니와 집으로 갈 버서이자 어어 얼쩔로고 애거 아우어니가 말었다
+original 아들 진수가 살아서 돌아온다
+decode  아뎔 진수가 살아서 돌아온도다
+original 촌 관계자들은 젊음 하나만 믿고 귀농하지 말라고 당부한다
+decode  농헌 감가글을 잘 하라가 미곡 주하지지 간가하다
+original 이런 점은 우리 춘향이나 심청이한테서 배워야 할 거다
+decode  이런 점 우리 춘향이나 청치안 애워얄 거다
+original 되도록이면 적게 담배를 피운다
+decode  되도록이면 적게 담배릴 피운다
+original 마디로 주인인 조 회장의 정상화 의지가 미흡했다는 것이다
+decode  한파데로 주리인 장하즌
+original 소년은 두 손으로 물 속의 얼굴을 움키었다
+decode  소년은 두 손으로 물 속의 얼룰을 움키었다
+original 그때 방안에서 또 엄마의 목소리가 들려왔습니다
+decode  그떼 방안에서 또 엄마의 모소리가 들려솼늡니다
+original 뽐내듯이 자랑하는 자라의 옆에서 토끼는 벌벌벌 떨기만 했어요
+decode  뽐애슷이 자랑나는 자라의 옆에서 호기는 더믐을 떨기만 했어요
+original 얘들아 어떻게 나무위에 올라갔니 알려주면 안 잡아 먹을께 하며 오누이들을 꼬였습니다
+decode  냬들아 어떻에 나무위에 올라랐니 알려주면 안 조아 모을 혀 오누두들
+original  그래도 이번에 국회에서 면세자 비율을 다시 높일 순 없냐는 얘기가 나오긴 했는데요
+decode  안 대애도 이어 패에서 기기을 으
+original 한참 세수를 하고 나더니 이번에는 물 속을 빤히 들여다본다
+decode  사수를 하고 마더니 이번에는 물 속을 빨히 늘여더돈다
+original 코피였다
+decode  코기였다
+original 내일은 진부와 대화에 장이 선다
+decode  내일은 진부와 대하에 장이 선다
+original 이는 소설이나 극에서도 마찬가지다
+decode  이는 소설이나 극에서도 마찬가지다다
+original 토끼는 자라의 등에 타고 육지로 향했어요
+decode  토끼는 자라의 등에 타고 육조르 향했어요
+original 놀리고 달아나는 토끼를 자라는 멍청히 바라보고만 있었답니다
+decode  놀리고 달아나는 토끼를 자라는 멍청히 바라로고마 있닸답니다
+original 시 측이 검찰에 제시한 서울대 호서대 연구도 문제가 있는 것으로 밝혀졌다
+decode  옥시
+original 그런데 어느 날 밤이었습니다
+decode  그런데 어느 날 밤이었습니다
+original 더 달렸다
+decode  더 다렸다
+original 그러면 돌 아래 숨어 있던 게들이 센 물살을 못 견디고 떠내려오다 발에 걸립니다
+decode  그리는 돌 아래 숨머 있던 게게 물살을 모 대니오 떠내려오다 걸립니다
+original 저는 바다 속 용궁에 사는 자라입니다
+decode  저는 바다 속 용궁에 사는 자라라입니다
+original 이 때 이것을 해결하는 방법에는 두 가지가 있다
+decode  이 때 이것을 흐혀한 방붑에는 두 있다
+original 토요일이었다
+decode  토요일이었다
+original  첼시 전에서 나의 실수는 마치 내 인생에 재앙이 불어닥친 것만 같은 느낌이었다
+decode  그 자 실 차 이세에
+original 저러다가는 방망이는 다 깎여 없어질 것만 같았다
+decode  저러다가는 봉망이는 다 깎여 없어질 것만 자닸다
+original 예전에는 죽기에 대를 붙일 때 질 좋은 부레를 잘 녹여서 흠뻑 칠한 뒤에 비로소 붙인다
+decode  예적에은 죽기게 대레 불일 애 족여서 어 시차 데
+original 소녀는 소년이 개울둑에 앉아 있는 걸 아는지 모르는지 그냥 날쌔게 물만 움켜 낸다
+decode  소녀는 소년이 개울둑에 앉아 앉아 있는 얼 아는지 모르는지 그냐 물만 문
+original 산장에 올라가선 가벼운 식사를 하고 가벼운 칵텔을 마시고 모기장으로 들어간다
+decode  산장에 올라가슨 바벼운 식사를 하고 가바운 칵틀을 마시고 모기장음오 들어단다
+original 그러나 현실을 있는 그대로 그린다면 그것은 역사의 기록과 다를 바가 없다
+decode  그러나 현실을 있는 그대려 그린다면 그어 역상의 다를 바가 없다
+original 기짝이나 장딴지 같은 데를 총알이 약간 스쳐 갔을 따름이겠지
+decode  볼기착이아 장딴 같간을 레를 옹일이 각간 스쳐 갈을 따맀렜제
+original 가을이 가면 문을 닫고 돌아앉듯이 냇가에는 사람들의 발길이 뚝 끊어집니다
+decode  가을이 가면 문을 받고 돌아아듯이 냇가에는 사람들의 발길이 뚜 어집니다
+original 소설을 중심으로 문학과 삶 혹은 현실과의 관계를 더 자세히 살펴보기로 한다
+decode  소서을 중심으로 문학과 상 혼 현설와의 관겨를 더 사스시 살펴비리
+original 신하들은 좋다는 약은 다 써보았지만 용왕님의 병을 낫게 하지는 못했어요
+decode  신하들은 좋다는 약은 다 써어았지만 용왕님의 병을 낫에 하지는 못했어요
+original 거기에는 정말 아름답고 맑은 연못이 있었어요
+decode  고기에는 성멀 말을 아랍고 맑근 연못이 있었어요
+original 반평생을 같이 지내온 짐승이었다
+decode  반평생을 같이 지내온 짐싱응있었다
+original 이 말을 하는 데 성공하자 빅키와 로즈를 비롯한 많은 사람들이 기뻐하였습니다
+decode  이이말 한 다 사어아자 가 이키어 런 이
+original 가엾게도 사슴은 오들오들 떨고 있었어요
+decode  가엾게도 사슴은 옫들오 떨고 있었어요
+original  성구에서는 곧 하느님께서 땅을 파멸시키는 자들을 파멸시키실 것이라고 알려 줍니다
+decode  그후 손보서언는 고드으 시
+original 한변호사협회 대변인을 지낸 최진녕 변호사 연결이 되어 있습니다
+decode  대한 그므서사 대
+original 대단히 무뚝뚝한 노인이었다
+decode  대단히 미뚝뚝한 노인이었다
+original 그러더니 아주머니는 구겨진 천 원짜리 한 장을 건네주었다
+decode  그렇데디 아주무니 구구진 저진 언치 한 장 건네네졌닸
+original 무슨 일이라도 생겼나
+decode  무슨 일이라 생겼나
+original 소년은 개울가에서 소녀를 보자 곧 윤 초시네 증손녀라는 걸 알 수 있었다
+decode  소년은 개울가에서 소녀를 보자 곤 운 처시네 승손녀라 살 수 있덨다
+original 자기도 모르게 돌아섰다
+decode  잘기고 모르게 돌아섰다
+original 그대로 재미있는 양 자꾸 물만 움킨다
+decode  그대로 새미있는 양 자꾸 물만 움킨다
+original 가엾게도 사슴은 오들오들 떨고 있었어요
+decode  가엾게도 사슴은 오들오들 떨고 있었어요
+original 선녀는 나무꾼이 건네 주는 옷을 입고 하는 수 없이 나무꾼을 따라가서 살게 되었지요
+decode  선녀는 나무꾼이 건네 주는 옷을 입고 하는 수 없어 나무꾼을 딸나서서 아이
+original 조상에게 가난을 먼저 배운 아이들
+decode  조상에게 가난을 먼저 배운 아이들
+original 싫었다
+decode  싫었다
+original 가 작아지는 현상의 원인은 골다공증일 가능성이 높다
+decode  기란 잘가가 땐년 고다 다이일
+original 궁리 말구 가 보세나그려
+decode  궁리 어
+original 옛날 어느 산골마을에 울기를 잘하는 어린애가 있었습니다
+decode  옛날 어느 산골마울에 울기를 잘하는 있었습니다
+original 가령 대천이나 만리포 송도 해운대 강릉 등지의 해수욕장을 생각해 보자
+decode  가령 대천이나 만리포 송도 해운대 강릉 등시의 해쇼욕장을 생각해 보자
+original 구증 구포란 찌고 말리기를 아홉 번 한 것이다
+decode  구즌 구포란 찌고 말리기를 어봅 본 한 것이다
+original 토끼가 용궁에 도착하자마자 용왕님의 신하가 나타나 토끼를 밧줄로 꽁꽁 묶었어요
+decode  토끼가 웅궁에 도착하자마자 용왕님의 신하가 나나나 토끼를 밧줄로 꽁꽁 물었어요
+original 다음에 올 때 주세요 하면서
+decode  다음에 올 때 주세요 하면서
+original 수현 전북 전주 덕진동 수박을 고를 때 두드려보거나 꼭지 상태를 보고 구매를 했는데요
+decode  기시언 정두 직는 나소 테
+original 나무꾼 아저씨 목숨을 구해 주셔서 고맙습니다
+decode  나무꾼 아저씨 목숨을 구해 주셔서 고맙습니다
+original 이렇게 매년 되풀이되는 것이 나의 피서 생활이다
+decode  이렇게 매년 되풀이되는 것이 솽이이다
+original 구증 구포란 찌고 말리기를 아홉 번 한 것이다
+decode  구증 고포란 찌고 말리기를 하봅 번 것이다
+original 것은 참고 기다릴 줄 아는 사람만이 마실 수 있는 물이지요
+decode  그것은 참고 기다릴 줄 아는 사람만의 마실 얼이지요
+original 검게 탄 얼굴이 그대로 비치었다
+decode  검게 탄 얼룰이 그대로 비치었다
+original 저는 사냥꾼에게 쫓기고 있어요
+decode  어선 사나냥에게 쫓치고 있어요
+original 늉 맛은 아무리 급해도 급조해 낼 수 없으니까요
+decode  숭녀난 만 아우이 그해노 급조 내낸 서 없으니까
+original 손님 본위가 아니고 자기 본위다
+decode  손님 본위가 아니고 자기 본이다
+original 오히려 아주머니께 고맙지요
+decode  오히려 아주머니께게 맙지요
+original 어디 먹을 것이 없을까
+decode  어디 먹얼 것이 없얼까
+original 신문 값은 물론이거니와 집으로 갈 버스비조차 없어 쩔쩔매고 있는데 아주머니가 물었다
+decode  신문 값운 물온인거니와 집으로 갈 벌시리조차 어쩌 애애 는다 주머니가 물렀다
+original 살려 주세요
+decode 살려 주세요
+original 려 주세요
+decode 살려 주세요
+original 물 유리창마다 붉은 글씨로 학과 통폐합에 반대한다는 문구가 선명하게 쓰여있습니다
+decode  드른은 시시로 아가 단다하
+original 그 꼴이 하도 우스워 돌아서서 칠판을 향해 웃고 나니 까르르르 폭소가 터진다
+decode  그 꼴이 돌아서서 향해 웃고 나니 까르르르 폭소가 터진다
+original 조상에게 가난을 먼저 배운 아이들
+decode  덤제 내아 앞에슬 주상에에 가난읠 먼저 아이딜
+original 그러자 하늘에서 또 동아줄이 내려왔습니다
+decode  그러자 하늘에서 또 동악줄이 내려왔습니다
+original 구증 구포란 찌고 말리기를 아홉 번 한 것이다
+decode  구승 구퍼란 찌고 말리기를 아본 본 헌 것이다
+original 하지만 날씨가 추워져 얼음이 꽁꽁 얼면 아이들이 몰려와 다시금 붐비기 시작합니다
+decode  하지만 날씨가 을을 낃꽁 얼면 아이들이 몰려와 다실그 붐비기 시작합니다
+original 보를 싸세요하는 나의 말이 떨어지자 교실은 떠들썩해지고 어수선해진다
+decode  나으 말에서 실지자 굘술은 이기기 머잰딘다
+original 더 깎지도 못하고 깎아나 달라고만 부탁했다
+decode  저 깎지조 못하고 깎아나 다다 나마무 투탁갔다
+original 계집이 다 무어야
+decode  계진이 다 무어야
+original 소녀가 갈꽃을 안고 있었다
+decode  서녀가 갈꽃을 안고 있었다
+original 그런데 이 아름다운 용궁에 슬픈 일이 생겼답니다
+decode  그런데 이 아름당운 용궁에 샐픈 일시 생겼답니다
+original 오히려 아주머니께 고맙지요
+decode  오히려 아주머니께 고맙지요
+original 윗마을에서 배꽃잎이 떨어져 물을 따라 떠내려오면 봄은 지나가고 여름이 찾아옵니다
+decode  윗마아을에소 봋낖이 떨어져 물을 따러 떠내려오면 봄은 지나가고 여름으 차압납니다
+original 외나무다리가 놓여 있는 조그마한 시냇물이었다
+decode  외나무다기가 녛여 있는 새눗이었다
+original 군침이 목구멍에서 꿀꺽했다
+decode  군침이 목구멍에서 꿀꺽
+original 그저 소맷자락 그것뿐이 어깨 밑으로 덜렁 처져 있는 것이다
+decode  그저 소맷자라 그것뿐이 어끼 밑이로 덜럴 처져 있는 것이다
+original 그 대신 아침에 일찍 일어난다
+decode  그 대신 아침에 일찍 일어난다
+original 옷을 잃어버렸군요
+decode  옷을 입어버렸간요
+original 소녀는 소년이 개울둑에 앉아 있는 걸 아는지 모르는지 그냥 날쌔게 물만 움켜 낸다
+decode  소녀는 소년으 개울둑에 앉자 있는 걸 아닌지 우른니 문운
+original 라서 그들은 시기심으로 분개하거나 질투심에 사로잡히지 않습니다
+decode  따라 서언들은 지주시
+original 소 시효로 치자면 한참 지났고 엿 장수 아저씨도 돌아 가신 지 오래되었다
+decode  공소 간
+original 만의 말씀
+decode  천만의
+original 아 내 날개옷을 한 번만 입어 보았으면
+decode  아 내 날내옷을 한 번만 입어 어았으면
+original 우리들은 춤을 출 거야
+decode  우리들은 참을 출 구야
+original 아이는 앵돌아진 투로 소리를 치며 깔깔 웃었다
+decode  아이는 앵돌아진 투로 소리를 치며 깔 었다
+original 이리 도망온 사슴을 못 보았소
+decode  이리 도몽온 사슴을 못 보았소
+original 지식을 획득하는 둘째 방법은 배우는 일이다
+decode  시식을 뫽득하는 둘쩌 방법은 배우으 우니다
+original 아아 이를 어쩌나
+decode  아아 이를 어쩌나
+original 소년은 조약돌을 집어 주머니에 넣었다
+decode  소년은 조약돌을 집어 주머너에 낳었다
+original 아무리 달래도 도무지 울음을 그치지 않았습니다
+decode  아무리 달래도 도무지 울음을 그치지 않았습니다
+original 아아 이를 어쩌나
+decode  아아 이를 어쩌나
+original 국지의 장비 같은 인물로 저돌적인 애국심만은 천하제일이다
+decode  장곡지이
+original 새벽 네 시면 산새 소리가 산중에 찬다
+decode  시번 네 시면 산지에 찬다
+original 호랑이가 온다 호랑이
+decode  호랑이가 온다 호랑이
+original 화중지병이지
+decode 화중지병이지지
+original 중지병이지
+decode 화중지병이지지
+original 아름다움이 영원한 기쁨이라면 그건 결코 일시적인 겉치레일 수 없어
+decode  아름다움이이 영한 기쁨이라면 그건 결고 일석인닌 겉치에에 실 없어
+original 그러나 차는 움직이지 않았다
+decode  그러나 차는 움직이지 않았다
+original 사람은 무엇을 위하여 사는가
+decode  이력윽 서어아 인드 무엇을 효하여 사느
+original 아 내 날개옷
+decode  아 내 날개옷
+original 세상에 간을 떼어 놓고 다니는 동물이 어디 있니
+decode  세상에 간을 떼떼 넣고 나니는 동물이 어디 있니
+original 아 내 날개옷을 한 번만 입어 보았으면
+decode  아 나 날나기을 안 번만 입어 보았으면
+original 그럼 마음대로 깎아 보시오
+decode  그런 마음대 깎까 보시이
+original 이 무렵 방안의 어린애는 엄마가 준 곶감을 들고 맛있게 냠냠 먹고 있었습니다
+decode  이 무렵 방안의 어린애는 엄마가 준 곶감을 일고 맛있게 냠냠 넘고 있었습니
+original 욕지거리를 잘 하는 미인을 우리가 상상할 수 있겠어
+decode  욕지거리를 잘 핳는 이인을 무리가 상상할 수 있겠어
+original 한참 법석을 친 이후다
+decode  한참 법서을 친 히후다
+original 즘에는 태극기 집회 참여인원이 더 많아졌고 열기도 뜨거워졌습니다
+decode  요짐안는 기지 바
+original 오누이는 의심스러웠지만 그만 문을 열어 주고 말았어요
+decode  오누이는 의심스러이자만 그만 문을 열얼 주가 말았어요
+original 그때 누군가 다가왔다
+decode  그때 누군가 다가왔다
+original 제로 인터넷에는 로스쿨 출신 신규 법관의 가족 정보가 돌고 있다
+decode  신자의 구수
+original 아직도 서름서름한 사인데 너무 과하지 않았을까 하고 마음이 섬찟해졌다
+decode  아직도 사름서름한 자린데 너누 과하지 않았을까 하고 마음이 섬찟해혔다
+original 너희 중에 누가 토끼의 간을 구해 올 수 있겠느냐
+decode  너희 주엔 누가 토끼의 한을 구호 술 싰겠그냐
+original 만도는 물기슭에 내려가서 쭈그리고 앉아 한 손으로 고의춤을 풀어 헤쳤다
+decode  만도는 멸기슭에 내려가서 쭈그리고 앉아 한 손으로 고이추를 풀어 후첬다
+original 그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 쓴다
+decode  그러나 슬기로 소녀이기를 바라려머서 글을 쓴다
+original 나이 많은 용왕님이 시름시름 앓다가 자리에 누웠기 때문이지요
+decode  나이 많은 용왕놤이 시름시름 앓다가 자리에 누웠기 무무이이
+original 이상을 위하여 산다
+decode  이상을 위하여 산다
+original 이렇게 매년 되풀이되는 것이 나의 피서 생활이다
+decode  이렇게 매녀 되풀이되는 것이 나의 피서 생활이다
+original 럴 경우에 내년 봄이나 농번기 때 그때 또 어떻게 할 것이냐
+decode  그런 형붐에 돔 이게 그
+original 아무의 눈도 닿지 않는 한적한 개울에서 알몸이 되어 눕는다
+decode  아무의 눈도 닿지 않는 한적한 개울에서 알몸이 되어 눕눈다
+original 덜어 달라고 조르면 그때만큼은 또 손이 어찌나 작으신지 덜어 낸 표도 나지 않는다
+decode  덜어 달라고 조르면 그때만큼은 이 어찌나 자엇시 덜안 노 노도 아난나
+original 그러나 어린애의 울음소리는 그치지 않았습니다
+decode  그러나 어린애의 울음소리는 그치지 않았습니다
+original 슬기로움은 우연하게 얻어지는 게 아니거든
+decode  슬기로움은 우연하게 얻어지는 나 아니거
+original 달래 냉이 돈 나물 둥글 레 씀바귀 등 보기만 해도 입맛이 살아납니다
+decode  달래 맹이 돈 보 고기 미비 입맛이
+original 재주가 별로 없는 사람들은 처음에 자주 상처를 입었을 것입니다
+decode  손젠시가 을러 어여사를를 자산
+original 내가 세간난 지 얼마 안 돼서 의정부에 내려가 살 때다
+decode  내가 세간난 지 얼마 아 어 때다
+original 용왕님의 병을 고칠 수 있는 것은 토끼의 간밖에 없어요
+decode  용왕님의 병을 수는 것은 토끼의 간밖에 없어요
+original 장마철이 되어 물이 불어나면 내를 가로질러 성긴 발을 쳐 둡니다
+decode  물이 불어나녀 내를 가로질러 성긴 발을 쳐 둡니다
+original 날개옷을 찾거든 빨리 올라 오너라
+decode  날개곳을 찾거든 말이 올라 오너라
+original 민단체가 강력 요구해 마련된 탐사였는데 결과는 어땠을까요
+decode  근 으구 우에 단 만은
+original 그러나 요사이 죽기는 대 쪽이 한번 떨어지기 시작하면 걷잡을 수가 없다
+decode  그러나 이성이 직긱는 대 쪽이 한번 반떠지 겆자 알우 없더
+original 굽은 벌써 더 자라나기는 틀렸고 닳아버린 철 사이로는 피가 빼짓이 흘렀다
+decode  굽원 벌써 더 자라나기는 틀렸고 다아머린 아이로는 새지 애짓
+original 광화문 지하도에는 많은 노점들이 있다
+decode  강화무 지하도에는 많은 노점들이 있다
+original 그건 저마다 하는 짓이 달라서 그런 거지
+decode  그건 조마나 하는 짓이 달라서 거로 것지
+original 그러나 그는 공연히 마음이 바빴다
+decode  그러나 그는 옹연히 마음이 바빴다
+original 성급한 사람의 행동을 보고 우물가에서 숭늉 찾는다고 합니다
+decode  성급한 사람의 행동을 보고 우물가에서 숭늉 찾는다고 합니다
+original 문가들과 탈북자 사회에서 내놓는 해석은 크게 두 가지다
+decode  전뭄과르과 발자 자에에서
+original 윗도리를 벗어 부채 대신 휘둘러 보기도 했으나 너구리는 쉽사리 나오지 않았다
+decode  윗도리를 벗어 부채 대시 히둘러 보기대 했으나 너구리는 십바이 나오이 않았다
+original 또 그 온도는 이웃으로 번져 한 사회를 이루게 될 것이다
+decode  또 그 온도느 이웃으러 번한 한 사르르 이이 것 것이다
+original 산장에 올라가선 가벼운 식사를 하고 가벼운 칵텔을 마시고 모기장으로 들어간다
+decode  현장에 올라가선 가벼여 힛사를 하고 아려은 탁텔을 마시고 모기자으어 어한다
+original 잠시 후에 사냥꾼이 씩씩거리며 뒤쫓아 왔어요
+decode  잠시 후에 사냥꾼이 씩씩거리며
+original 도로변에 먼지를 부옇게 덮어쓰고 도사리고 앉아 있는 초가집은 주막이었다
+decode  도루변에 부엽게 덕어쓰고 도사리고 앉차 았는 초가집은 주막있닸
+original 성터 돌무더기 밑에 너구리굴이 있었다
+decode  상터 돌무더기 밑에 너루리굴이 있었다
+original 잠깐 교무실에 다녀온 사이다
+decode  잠깐 다년 자이다
+original 토끼는 정신없이 아름다운 바다 속을 구경하며 자라와 함께 용궁으로 향했어요
+decode  토끼는 정신없이 아름다운 바다 속을 고경하며 자라와 함께 용구으로 향했어요
+original 그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 쓴다
+decode  그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 든다
+original 소녀 아닌 갈꽃이 들길을 걸어가는 것만 같았다
+decode  소여 아닌 갈꽃이 들길을 걸어가는 것만 같았다
+original 먼저 직원들의 이직률이 뚝 떨어졌고 만족감은 올라갔다
+decode  매먼더 독더 져고 곤
+original 러한 전략적 요충지의 이점을 제일 먼저 깨달은 사람들은 로마인들이 아니었습니다
+decode  이런한 구지지 세
+original 지혜도 두 가지 면에서 생각할 수 있으니 그 하나는 예지요 다른 하나는 지식이다
+decode  지례로 두 가지 연에서 생학할 주 있읐니 그 하나는 예지요 다르 하나는 지식이다
+original 어려서 내가 놀던 그 물 속에서
+decode  어려서 내나 논던 글 물 속에서
+original 진종일 신경이 땀을 흘리는 고통스러운 생지옥이 아닐 수 없다
+decode  짐종올 신경이 딸을 그리는 고통으러운 생지오이 아 우 없다
+original 아 내 날개옷
+decode  선녀느 날개옷이 입고 싶어 견딜 수가 없었어요
+original 아이 이를 어쩌지요
+decode  사이 이를 어쩌지요
+original 이 무렵 방안의 어린애는 엄마가 준 곶감을 들고 맛있게 냠냠 먹고 있었습니다
+decode  이 무렵 방안의 어린애는 엄마가 준 곶감을 들고 맛있게 남냠 먹급니다
+original 그러나 어린애는 울음을 그치지 않았습니다
+decode  그러나 어린애는 울움을 그치지 않았습니다
+original 소년은 개울둑에 앉아 버렸다
+decode  소년인 개룰둑에 앉아 버렸다
+original 어머니를 잡아먹은 간교한 호랑이는 어머니흉내를 냈습니다
+decode  어무를 작아보으 간견 하랑이는 어머리리르를 냈습니다
+original 문학에서는 감동을 필요로 하기 때문이다
+decode  문학에서는 감동을 필요로 하기 때문이다
+original 내장으로 시력도 나빠져 코 앞에 있는 사물도 분간하기 어려워한다
+decode  아자
+original 나는 이곳에서 혼자의 피서를 한다
+decode  나는 이곳에서 혼자의 피서를 한다
+original 소녀는 소년이 개울둑에 앉아 있는 걸 아는지 모르는지 그냥 날쌔게 물만 움켜 낸다
+decode  소녀는 소년이 개울둑에 앉아 그냐 날새게 년
+original 그러나 너구리보다도 아이들이 먼저 연기를 먹고 물러났다
+decode  그러나 너구리으다도 오이일일 먼저 전굴를 먹고 눌랐다다
+original 저기 저쪽으로 뛰어 갔어요
+decode  저기 어쪽으로 뛰어 갔어요
+original 하지만 아이들은 투명한 가을햇살을 받으며 냇가에 앉아 참게와 줄다리기를 시작합니다
+decode  하지만 아이을은 투명한 가을앳살을 받으며 냇가에 앉아 참게와 참디기롸
+original 그건 이내 지워지고 마니까
+decode  그건 이내 지워지고
+original 다행이었다
+decode  다행이었다
+original 되도록이면 말을 하지 않는다
+decode  되도록이면 말을 하지 않는다
+original 어서 토끼의 간을 잡수시고 건강해 지세요
+decode  어서 토끼지늘 즐 한강해 지세요
+original 그리고 농민들의 일을 직접 도와 주는 노력 봉사도 했다
+decode  그리고 농민들의 이을 직접 도와 주는 노력 봉사도 했다
+original 군침이 목구멍에서 꿀꺽했다
+decode  군치이 목구멍에어 꿀꺽했다
+original 그런데도 할머니는 그 내에 가서 빨래를 하는 법이 없었다
+decode  그런데도 할머니는 그 내에 가서 법이 없었다
+original 무슨 일이라도 생겼나
+decode  무슨
+original 향신문 변모씨는 열 개월 전 오백 만원을 주고 반려견을 집에 들였다
+decode  경영 저
+original 모님은 내가 어렸을 때부터 교육을 많이 받으라고 권하셨습니다
+decode  둥믕님는 내어 얼였슬 때부저 푸으을 허셨셥시다다
+original 숭늉이나 누룽지 맛을 모르는 사람들 이것이 바로 지금의 신한국이다
+decode  숭늉이나 누릉지 맛을 무르는 사람들 이것이 바로 지금의 신한국이다
+original 나무꾼 아저씨 안녕하셨어요
+decode  나무꾼 아저씨 안녕하셨어요
+original 콧물이 튀었다
+decode  콧물이 튀었다
+original 녀석이 제법 난질꾼인데 꼴사납다
+decode  녀석이 제법 난질꾼인에 꼿사납다
+original  사건에 있어서는 처음에 사고 낸 거 그것은 수리 견적이 백 육십 오 만 원 나왔는데요
+decode  그 산건 니이서선읠 청에
+original 사실은 네 간으로 용왕님의 병을 치료하려고 한단다
+decode  사실은 네 간으로 용왕님의 병을 치료하려고 한단다
+original 용왕님이 신하들을 둘러보며 말했어요
+decode  용왕님이 신하들을 두러보며 말했어요
+original 이런 점은 우리 춘향이나 심청이한테서 배워야 할 거다
+decode  이런 점으 우리 춘헝이느 심청이한테서 배붜야 하
+original 성급한 사람의 행동을 보고 우물가에서 숭늉 찾는다고 합니다
+decode  성급한 사람의 행동을 보고 무물가에서 숭늉 찾는다고 합니다
+original 즉 먹기 위하여 살고 살기 위하여 먹는다
+decode  즉 먹기 위하여 살고 살기 마믄다
+original 내가 사는 이 세상으로부터
+decode  내가 아니 이 생으로버터
+original 일찍 자는 거다
+decode  일찍 자는 거다
+original 꼴이 우스워 우리는 보고만 있었다우
+decode  꼬리 웃수워 우리는 보고만 있었다
+original 밥을 다 퍼내고서 솥에 남은 찌꺼기를 헹구어 마신 숭늉
+decode  밥을 다 퍼내고서 손에 남은 찌꺼기를 헹구어 마신 숭늉
+original 또 왜 엄마 손으로 꼭 밥을 퍼 주셨는지도
+decode  또 왜 엄마 손이록 깝을 펄 퍼 주션즌지도
+original 나무꾼은 땅 바닥에 털썩 주저앉아 한숨을 쉬며 사슴이 부탁한 말을 생각했어요
+decode  나무꾼은 땅 바닥에 덜썩 주저앉아 한숨을 쉬며 사슴이 부탁한 말을 생각했어요
+original 디딤돌을 헛디뎠다
+decode  디딤돌을 헛디렸다
+original 아 내 날개옷을 한 번만 입어 보았으면
+decode  아 내 날개옷을 돈 번만 보았으믄
+original  기준대로라면 성주재단이 포상을 받는 데 걸림돌은 없다
+decode  이 성지제가
+original 왜 엄마가 안 오시는 걸까
+decode  왜 엄마가 아 오시는 갈까
+original 그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 쓴다
+decode  그러나 슬기롭고 아름다우 수녀기기를 바라면 글
+original 디딤돌을 헛디뎠다
+decode  디님돌을 더디뎠다
+original 리들은 시나 소설을 읽고 거기에서 우리들의 삶의 모습을 발견한다
+decode  설을 읽고 거게세서 우리들을 살의 무의 무스을 발견난다
+original 내가 사는 이 세상으로부터
+decode  내가 사는 이
+original 용왕님의 병을 고칠 수 있는 것은 토끼의 간밖에 없어요
+decode  요뢍님의 병을 고출 수 있는 것은 토끼의 간밖에 없어요
+original 아무리 달래도 도무지 울음을 그치지 않았습니다
+decode  아무리 도무지 울음을 그치지 않았습니다
+original 청소 검열을 할 때였다
+decode  청소 곰열을 흘 때였다
+original 바동거려도 놓아 주지 않으면 메에 하고 울기도 했다
+decode  바동거르도 노아 주주 않으면 메에 하고 울기도 했다
+original 일하시기 힘드시죠
+decode  일라시기 힘덜 시지죠
+original 갈림길에 왔다
+decode  갈림길에 왔다
+original 하지만 호랑이를 태우고 한참 하늘로 올라가던 동아줄이 갑자기 뚝 끊어지는 것이었어요
+decode  하지만 호랑이를 태우고 한참 하늘로 올라가는 동아줄이 갑자기 국지
+original 연소패들을 적수로 하구야 대거리가 돼야 말이지
+decode  연소파들을 적수로 하구야 대거리가 돼아 말이지
+original 잠시 후에 사냥꾼이 씩씩거리며 뒤쫓아 왔어요
+decode  잠지 호에 사냥꾸이 씩씩거리며 뒤쫓아 았어요
+original 유난히 맑은 가을 햇살이 소녀의 갈꽃머리에서 반짝거렸다
+decode  이간히 맑은 가을 햇살이 소니의 갈꽃머리에서 반짝거렸다
+original 뒤를 따라 장판을 달음질하려니 게슴츠레한 눈이 뜨거워질 것 같다
+decode  뒤를 따라 장판을 달음딜다러니 게슴체레한 눈이 뜨어일 갓 앝다
+original 뒤에는 청량한 가을 햇살 아래 빛나는 갈꽃뿐
+decode  뒤에는 청량한 가을 하래 잋차는 갈꽃뿐
+original 싱싱하고 튼튼하게 자라도록 심고 가꾸어야 할 이 십자목에 정성과 지혜를 바치고 싶다
+decode  싱싱하고 튼트라게 자라도 이 지자멕에 정성 지례르 비로 아
+original 생 난이 심해지면서 대학 간의 격차는 더욱 심해지고 고등교육의 질은 떨어질 수 있다
+decode  딤면서 해아가 곡저 오시니 을 어
+original 값을 굉장히 비싸게 부르는 것 같았다
+decode  값일 굉장히 비싸게 브르느 것 같았다
+original 그 한 가지는 노력이니 노력은 두 가지 면에서 생각할 수 있다
+decode  그 한 가지는 노력인니 노력은 주 가지 연에 생각할 수 있다
+original 더 달렸다
+decode  더 달렸다
+original 엄마는 어린애를 달래다가 지쳤습니다
+decode  엄마는 어린앨를 달래다가 지쳤습느니다
+original 순실 씨 조카 장시호 씨가 최근 특검에서 의미심장한 진술을 한 것으로 확인됐습니다
+decode  체춘츤 질 장 십간 책간 득거어어 이이 시사하
+original 그러나 번번이 허탕이다
+decode  그러나 번번이 허탕이다
+original 축들이 사족을 못 쓰는 것두 사실은 사실이나 아무리 그렇다군 해두 왜 그 동이 말일세
+decode  축들으 자족을 못 쓰는 것두 사실은 사실이나 아우리 그러다 우 다이
+original 나이 많은 용왕님이 시름시름 앓다가 자리에 누웠기 때문이지요
+decode  나이 많은 용왕임임 시슴시름 앓다가 자리에 누웠기 매매지지요
+original 얼마 후 선녀들은 목욕을 끝내고 자기의 날개옷을 찾아 입기 시작했어요
+decode  얼나 호 순녀들은 모용을 꽅나고 자기의 날개옷을 찾아 입기 시잤했어요
+original 또 지식 중에는 체험으로써 배우기에는 너무 위험한 것도 많다
+decode  또 지식 중에는 체험으로써 배우게에는 너무 엄만 마다
+original 아이 이를 어쩌지요
+decode  아이 이를 어쩌지요
+original 토끼는 정신없이 아름다운 바다 속을 구경하며 자라와 함께 용궁으로 향했어요
+decode  터끼는 정신없의 아름다운 바다 솔을 고겨하며 자라와 함에 용궁으 향했어요
+original 볼기짝이나 장딴지 같은 데를 총알이 약간 스쳐 갔을 따름이겠지
+decode 볼기짝이라 장딴지 같은 데를 총알이 약간 스셔 샀을 딸름있게지
+original 기짝이나 장딴지 같은 데를 총알이 약간 스쳐 갔을 따름이겠지
+decode 볼기짝이라 장딴지 같은 데를 총알이 약간 스셔 샀을 딸름있게지
+original 계집 목소리로 문득 생각난 듯이 조 선달은 비죽이 웃는다
+decode  계집 목소리로 문득 생강난 듯이 조 선달은 비즐이 웃는다
+original 후 중국 정부에서 우리나라와 같이 표준화된 매뉴얼을 쓸 것으로 기대하고 있다
+decode  이구 서히나 지 주단디
+original 를 두고 강도 높은 기강 확립을 예고한 것이란 해석이 나왔다
+decode  이를 도 근은 발을을 한
+original 이렇게 볼 때 너의 존재는 절대적인 것이다
+decode  이럴기 때 누애 조녀를 술대지
+original 어머니가 아무리 달래도 보채면서 울음을 그치지 않았습니다
+decode  어무니가 아무리 달래도 보치면서 움을 그치지 않았습니다
+original 호소하는 목소리로 야단스럽게 울며 반겨한다
+decode  오라하는 목시리 이아 반겨 간단다
+original 머리에 피도 안 마른 녀석이 낮부터 술 처먹고 계집과 농탕이야
+decode  머리 피도 안 마른 녀석이 낮부터 술 처먹고 기집가 봉탕이야
+original 내게 서울이라는 도시는 모르는 이에게는 버스 토큰 하나 빌려 주지 않는 곳이었다
+decode  네게 서우이라는 도시는 게게 보스 코라 빌려 주지 않는 곳이었다
+original 다란 눈을 가진 열 개월 된 고릴라 소포는 어미 고릴라 모팜비 옆에서 놀고 있습니다
+decode  거다난 무라지
+original 한 오래 근무하지 않고 일찍 청와대를 나온 이유도 석연치 않다
+decode  또한 우레 이로도 아다
+original 그래서 노상 그 쪽은 조끼 주머니 속에 꽂혀 있는 것이다
+decode  그래더 노사 쪽은 조끼 주끼 주목에 옿혀 있는 것이다
+original 윗마을에서 배꽃잎이 떨어져 물을 따라 떠내려오면 봄은 지나가고 여름이 찾아옵니다
+decode  윗마을에서 배꽃낖이 떨어져 물을 딸아 떠내려오면 봄은 지나가고 녀르이 차옵니나
+original 기차도 전기도 없었다
+decode  지차도 종기도 없었다
+original 면 혹은 방송을 통한 인용 보도시 출처를 밝혀주시기 바랍니다
+decode  시는 혹은 호한
+original 밥을 다 퍼내고서 솥에 남은 찌꺼기를 헹구어 마신 숭늉
+decode  바으 가 내래서 솥에 남은 남은 찌거기를 헹구이 숭순요
+original 덩그러니 남은 나는 그 자리에 오랫동안 서 있었다
+decode  덩그러니 마믄 나는 그 자리리 오랫동안 서 있었다
+original 아 사슴이 한 말을 꼭 지켰어야 하는 것을
+decode  아 사슴이 한 말을 꼭 지켰어야 하는 것을
+original 내리막길은 빨랐다
+decode  내리만길엔 빨랐다
+original 우리 집에서 그다지 멀지 않은 곳에 맑은 물이 흐르는 내가 있었다
+decode  우리 집에서 그다지 멀지 않은 곳에 맑은 우이 흐느는 내가 있었다
+original 노인에 대한 멸시와 증오심도 조금은 덜해진 셈이다
+decode  노인에 대한 멸 증오심도 조금은 덜해진 셈이다
+original  전 부사장의 일 심 선고는 서울서부지법에서 십 이 일 오후 세 시에 열린다
+decode  보전 무사자에
+original 선녀는 나무꾼이 건네 주는 옷을 입고 하는 수 없이 나무꾼을 따라가서 살게 되었지요
+decode  선녀는 나무운이 먼네 순 읏을 입고 하는 수 없이 나무꾼을 딸라가서 살게 되었지
+original  특별감찰관은 구 월 삼십 일 법사위에 증인으로 출석할 예정이었다
+decode  이 우구 산실를 이이를
+original 락스런 녀석들이라 어쩌는 수 있어야죠
+decode  누락스런 녀석들이라 어쩌는 시 이아아죠
+original 어물장수도 땜장이도 엿장수도 생강장수도 꼴들이 보이지 않았다
+decode  어물자수소 땜장이도 엿장수도 생강장수도 꿀딜이 보이지 않았다
+original 그것은 다름 아닌 호랑이었습니다
+decode  그것은 다른 아인 호랑이었습니다
+original 또 얼마 후에 방망이를 들고 이리저리 돌려 보더니 다 됐다고 내준다
+decode  또 얼마 해에 방망이를 들고 이리저리 도려 보더니 다 됐다고 대진다
+original 나이 많은 용왕님이 시름시름 앓다가 자리에 누웠기 때문이지요
+decode  날은 안 왕님이 시름시름 딿다가 자라에 누워궈 매미이
+original 추우실 텐데 우선 이 옷이라도 입으세요
+decode  추우실 텐데 우선 이 옷이라도 입으세요
+original 글쎄 재촉을 하면 점점 거칠고 늦어진다니까
+decode  걸쎄 재촉을 하년 점점 거칠고 늦어진다니니
+original 굽은 벌써 더 자라나기는 틀렸고 닳아버린 철 사이로는 피가 빼짓이 흘렀다
+decode  굽은 벌써 더 자라아기는 글렀고 닳아버린 철 사이로는 피아 내짓이 들렀다
+original 지나치는 사람이 없었기에 망정이지 누가 보았더라면 큰 웃음거리가 될 뻔했었다
+decode  시나치는 사람이 없었기에 망정이지 누가 보았덜라면 킁 웃슴거리가
+original 하지만 금방 나오지는 않습니다
+decode  하지만 금방 나오지는 않습니다
+original 계는 국내 단체급식 시장 규모를 십 구 조원가량으로 추산하고 있다
+decode  억키른 단체기 시시장
+original 물건 가지고 나꾸었나부지
+decode  물건 가지고 나꾸어어부지
+original 무명필과 주단 바리가 두 고리짝에 꼭 찼다
+decode  무녕필롸 우단 바리가 두 구리짜에 꼭 찼다
+original 아이 배고프구나
+decode  아이 배고푸구나
+original 여기까지는 있었던 삶의 현실이다
+decode  여기까지는 있업껀 상의 펄일이다
+original 즉 근면이다
+decode  즉 근면이다
+original 어떤 사람이 바닷가에 갔다가 예쁜 물새알을 보았다고 하자
+decode  어떤 나람이 바닷가에 갔다가 예쁜 물새알을 보았다가
+original 토끼는 육지의 동물이 아니요
+decode  토끼는 육지의 동물이 아니요
+original 러나 반 총장이 여전히 아마추어적 행보를 보이고 있다는 지적도 적지 않다
+decode  그러하 한 이 연정햐 추아저 깄나
+original 호랑이는 이 생각 저 생각 하면서 방안의 목소리에 귀를 기울였습니다
+decode  호랑이는 이 생각 전 내 하면 방안의 목소리 위를 기울읍습니다
+original 기가스 조작사태 속에서도 폭스바겐이 판매 신기록을 세운 주요 이유입니다
+decode  기긱가스 종자삭삭 버브바게 이 이이니디
+original 사람은 이상을 추구하면서 산다
+decode  사란은 이상을 산다
+original 또 막 나온 신문의 잉크 냄새를 맡으면 은근히 기분이 좋아지기도 했다
+decode  또 막 온 신물의 이크 냄새를 맡으면 은근히 기분이 좋아지기도 했다
+original 그 따위로 장사를 해 가지고 장사가 될 턱이 없다
+decode  그 따위로 장사를 해 가지고 장사가 될 턱이 없다
+original 선물을 잔뜩 받은 기분이었다
+decode  선물을 잔뜩 받은 기분이었다
+original 그저 소맷자락 그것뿐이 어깨 밑으로 덜렁 처져 있는 것이다
+decode  그저 소맷자락 여 덜렁 처져 있는 것이다
+original 그럼 어서 가서 가져오너라
+decode  그럼 어서 가서 가져오너라
+original 사람은 무엇을 위하여 사는가
+decode  다가는 무엇을 위하여 사는다
+original 어느 날인가 급식함에 넣어둔 결석생의 빵이 없어져 야단이 난 적도 있었다
+decode  어느 날인아 급식한에 어어드 빵여 없어저 야단냐 적
+original 갖 나쁜 일에 대한 책임이 마녀로 여겨진 사람들에게 돌아갔습니다
+decode  구간 이
+original 사슴은 인사를 한 후 이렇게 말했어요
+decode  사슴은 인사를 한 눈 이러게 말했어요
+original 소년은 한 손으로 코피를 훔쳐 내면서 그냥 달렸다
+decode  소년은 한 손으로 코키를 훔쳐 녀맨서 그냥 달렸다
+original 내가 사는 이 세상으로부터
+decode  내가 자는 이 세상으로루터
+original 이것도 모르고 오누이는 오시지 않는 어머니를 기다리고 있었습니다
+decode  이것도 오르고 오누이는 오시지 않는 어머니를 기다리고 있었습니다
+original 코피였다
+decode 
+original 연소패들을 적수로 하구야 대거리가 돼야 말이지
+decode  은소포드을 하구야 대거리가 돼야 말이지
+original 축들이 사족을 못 쓰는 것두 사실은 사실이나 아무리 그렇다군 해두 왜 그 동이 말일세
+decode  축들이 사족을 못 므는 넛두 사실은 사실이니 아무르 늘렀다 나도 그
+original 소년은 이 갈꽃이 아주 보지 않게 되기까지 그대로 서 있었다
+decode  소년은 이 갈꽃이 아주 보지 않게 되기까지 그대로 서 있었다
+original 해로 사업 영위 삼십 이 년째인데 이 회사는 그동안 한 번도 성인으로 살지 못했다
+decode  오리르 사
+original 현실에 더 큰 비중을 두는 경향과 이상을 중시하는 경향은 시대에 따라 달리 나타난다
+decode  현실어 더 큰 북전 는경화 향과 이상을 중시한 개향은 시에 따라 달리 바탄나
+original 동안 미혼의 고령층은 수가 매우 적고 비중도 아주 작은 것으로 알려졌다
+decode  그드간 부령지가 수사
+original 로커도 남한에서 여섯달만 머무르면 여권이 나온다고 꼬드겼다
+decode  뚜럭고로호 안여스 여사다다라
+original 그다지 마음이 당기지 않는 것을 좇아갔다
+decode  그다지 마음이 당기지 않는 곳일 좇아갔다
+original 저것 봐라 큰 구렝이가 왔다
+decode  저것 봐라 큰 구렝이가 왔다
+original 나무꾼은 사슴이 일러 준 대로 날개옷 한 벌을 감추어 버리고 숲 속에 숨어서 기다렸어요
+decode  나무꾼은 사슴이 일러 준 대로 날개옷 한 벌을 감추어 이기 주 임에 임어어 가려어요
+original 송아지가 메에 하고 울면 어미소가 무우 하고 어슬렁어슬렁 다가오기도 했다
+decode  송아시라 메에 하골 울면 어미속감 무우
+original 이것도 모르고 오누이는 오시지 않는 어머니를 기다리고 있었습니다
+decode  이것도 모르고 오누이는 오시지 않난 어머니를 기다리고 있었습니다
+original 국 무속의 경우에도 남쪽 지방과 북쪽 지방이 상당히 다르다
+decode 
+original 벌써 고갯마루가 저만큼 높이 쳐다보이는 것이다
+decode  벌저 고갯마마가 자만음 높이 녀자버언 걸걱 것이다
+original 그런데도 마냥 좋았다
+decode  그런데도 마냥 좋었다
+original 이는 소설이나 극에서도 마찬가지다
+decode  이는 소설이나 극에서도 마잔간
+original 없어도 그만인 그런 존재가 아니란 말이다
+decode  어서 구만이 그러 아나닌 말이다
+original 에 임 부시장이 서울 종로경찰서에서 참고인 신분으로 출석해 조사를 받았다
+decode  이 부기안 종로
+original 아 사슴이 한 말을 꼭 지켰어야 하는 것을
+decode  아 한 깔 지 지쎴이아 하는 것을
+original 호소하는 목소리로 야단스럽게 울며 반겨한다
+decode  호소하는 목소리로 아단스럽게 울며 반견난다
+original 되도록이면 등잔을 켜지 않는다
+decode  되도록이면 동잔을 쳐지 않는다
+original 그리고 말씨들이 어찌도 거친지 그대로 듣고 있을 수 없었다
+decode  그리고 말씨들이 어지도 거진지 그대로 드고 있쓸 수 없었다
+original 새들도 짐승들도 착한 나무꾼의 친구들이라 나무꾼은 조금도 외롭지 않았어요
+decode  새들도 짐승들도 착한 나무꾼의 치구들이라 나무꾼은 조고으 외롭지 않았어요
+original 울시나라의 저출산이 심각하니 여성은 출산을 해야 하는 의무를 가진 기계일 뿐이다
+decode  추사
+original 따스한 봄날이라 산에는 울긋불긋한 꽃들이 피어있고 새들이 반갑게 지저귀고 있었어요
+decode  나스한 봄날리라 산에는 불불불긋한 꼿들으 피어있고 대들이 반갑게 지저기고 이었어요
+original 기차도 전기도 없었다
+decode  니릴여 한디 디차도 전다 없었덨다
+original 윗마을에서 배꽃잎이 떨어져 물을 따라 떠내려오면 봄은 지나가고 여름이 찾아옵니다
+decode  윗만알에려 떨어져 물여 따아 떠내려오면 봄은 지나가고 여음이 차옵니다
+original 옷을 잃어버렸군요
+decode  옷을 잃어버렸군요
+original 러한 전략적 요충지의 이점을 제일 먼저 깨달은 사람들은 로마인들이 아니었습니다
+decode  이러한 중충지 정을 수 거
+original 뭇 시선을 막으려고 그는 짐승의 배 앞을 가리어 서지 않으면 안 되었다
+decode  뭇 시선을 막으려고 그는 짐승의 빂 앞을 가리어 서지 않으면 안 안었아
+original 한 선수들의 저조한 성적을 이유로 최룡해가 조기 소환됐다는 이야기다
+decode  톡한저 정적을을 이로 호기
+original 동이 앞에 막아서면서부터 책망이었다
+decode  동이 앙에
+original 자라야 잘 가
+decode  자라야 잘 가
+original 그리고 휘청휘청 고갯길을 내려가는 것이다
+decode  그리고 위청휘청 고갯길을 내려가는 것이다
+original 그런데 이 아름다운 용궁에 슬픈 일이 생겼답니다
+decode  그런데 이 아름다우 웅우에 플픈 일이 생겼답니다
+original 가령 사람이 월세계에 가서 살려고 그 방법을 연구하고 있다고 하자
+decode  가령 사람이 월세계에 가서 살려고 그 방법을 연구가고 있다고 하자
+original 이 굴 속에는 오래 전부터 늙은 너구리가 살고 있다고 했다
+decode  이 굴 속에는 오래 저무터 늙은 너구리가 살고 있다고 했다
+original 만도는 왼쪽 조끼 주머니에 꽂힌 소맷자락을 내려다보았다
+decode  만도는 왼쪽 조끼 주머니에 꽂인 믓자라을 내려다보옸다
+original 연습실에 거의 다다랐을 때 더 빨리 가려는 욕심에 골목으로 들어섰다
+decode  연습습에 거이 때 빨리 가려는 욕심에 골목오로 들어섰다
+original 아들이 돌아온다
+decode  가들이 돌아온다
+original 먹이 송아지를 안고 얼굴을 비비대 보면 털이 비단결보다도 더 보드랍고 매끈했다
+decode  젖먹이 송아지리 안골 얼굴 비리대 보면 덜텨 비던결바다 브깬댔다
+original 시 한 번 카르타고의 운명은 로마의 운명과 뗄려야 뗄 수 없는 관계를 맺고 있었습니다
+decode  다시 언 웅영은 찶
+original 편 새누리당은 팔 일 국회의원 연찬회를 통해 새 당명을 자유한국당으로 결정했다
+decode  한겨 할우 연전느 자안
+original 배를 좀 보지
+decode  개를 좀 모지
+original 일하시기 힘드시죠
+decode  일하시기 힘드시죠
+original 문학의 여러 장르 중에서 현실과의 연관성이 가장 큰 것은 소설이다
+decode  문학의 여러 장우 징에서 안선이 가자 큰
+original 찰은 조만간 두 사람을 불러 정확한 사건 경위를 조사할 방침이다
+decode  경찰은 조막간 제서 아을 영기을 안십다다
+original 그러나 어린애는 울음을 그치지 않았습니다
+decode  그러나 어린애는 울음을 그치지 않았습니다
+original 나무꾼은 시치미를 뚝 떼었어요
+decode  나무꾼은 시치미를 뚝 떼었어요
+original 용요금의 일부에 대해서는 세액공제를 통해 환급받을 수 있도록 한다
+decode  새 애즐 해하 고
+original 빨래에서 빠진 땟물이 아까워서였다
+decode  빨래에서 빠진 땟물이
+original 바동거려도 놓아 주지 않으면 메에 하고 울기도 했다
+decode  바동거려도 돟아 주주 않으면 네연 나고
+original 여타의 동물은 이상이라는 것이 없다
+decode  여타의 동물은 이상이라는 것이 없었다
+original 그러나 슬기롭고 아름다운 소녀이기를 바라면서 글을 쓴다
+decode  그러나 슬기롭고 아름다운 소녀기기를 바라면서 글을 든다
+original 구가 삼십 오 도 울산이 삼십 삼 도 전주가 삼십 사 도까지 오르겠습니다
+decode  해구과 암십 오 상아 안지 언자가 이지
+original 토끼가 용궁에 도착하자마자 용왕님의 신하가 나타나 토끼를 밧줄로 꽁꽁 묶었어요
+decode  토끼가 용궁에 도착학자마자 용왕님의 신한가 토끼를 깔꿀 꽁꽁
+original 오전 네 시부터 열 두 시까지 산장에서 일을 한다
+decode  오전 네 시부터 열 두 시까지 상녕어서 일을 한다
+original  여성은 흰색 긴팔 티에 무릎 위까지 내려오는 스커트와 단화를 착용한 것으로 보인다
+decode  이 이여제 빈발 피애 부븐까지 애려오르
+original 되도록이면 마음을 열어 놓고 산다
+decode  되도록이면 마음을 열어 논고 산다
+original 또 그 말씨에 의해서 인품을 닦아 갈 수도 있는 거야
+decode  또 그 의해서 인품을 닦아 갈 수도 있는 거야
+original 큰 호랑이가 오니 어서 울음을 그쳐라
+decode  큰 호랑이가 오니 어서 울음을 그져라
+original 나는 난처한 표정으로 고개를 끄덕였다
+decode  나눈 난히한 표적으로 고개를 꾸덕이였다
+original 그러나 지식은 그 종류와 양이 무한하다
+decode  그러나 지식은 그 종미와 야이 무만아
+original 엄마는 언제나 우리에게 막 지은 새 밥으로 상을 차려 주셨다
+decode  어마는 언저아 우리에 막 지은 새 밥으로 상을 차
+original 그러나 나는 전의 것이나 별로 다른 것 같지가 않았다
+decode  그러나 나 천의 것이나 늣 같지가 않았다
+original 이 굴 속에는 오래 전부터 늙은 너구리가 살고 있다고 했다
+decode  이 굴 오래 너부터 늙은 너구리가 살고 있다고 했다
+original 한참 법석을 친 이후다
+decode  발참 우야
+original 엄마는 언제나 우리에게 막 지은 새 밥으로 상을 차려 주셨다
+decode  엄마는 어제나 우리에게 막 지은 새 밥으로 상을 차려 주섰다
+original 만도가 읍에 나올 때마다 꼭 한번씩 들르곤 하는 단골집인 것이다
+decode  만도가 읍에 나올 때마다 꼭 한번씩 들로곤 하는 단골집인 엇이다
+original 삼대 독자가 죽다니 말이 되나
+decode  삼대 독자가 죽다니 말이 되나
+original 그거 참 걱정이네
+decode  그거 참 걱정이네
+original 녀석이 제법 난질꾼인데 꼴사납다
+decode  녀석이 제버
+original 투명한 눈에만 비치기 때문에
+decode  투명한 눌에만 미치기 때문에
+original 지식을 획득하는 제 의 방법은 연구와 터득이다
+decode  지식을 획득하는 즤 의 방법은 연구와 터들이다
+original 그러다가 깜짝 놀라 일어나고 말았다
+decode  그러다가 깜짝 놀라 일어나고 말았다
+original 토끼가 용궁에 도착하자마자 용왕님의 신하가 나타나 토끼를 밧줄로 꽁꽁 묶었어요
+decode  그기에 운그 도작하자자 아왕왕이 치하아 나타나 토끼을 밧줄로 꽁꽁 묶었어요
+original 나무꾼은 사슴을 얼른 숲 속에 숨겨 주었어요
+decode  나무꾼은 사슴을 올른 숲 속에 숨겨 주었어요
+original 나무꾼 아저씨 안녕하셨어요
+decode  나무꾼 안녕하셨여요
+original 밥 짓는 일은 거기에서 끝난다
+decode  밥 짓는 일은 거게세서 끝난다
+original 얼금뱅이요 왼손잡이인 드팀전의 허생원은 기어코 동업의 조 선달에게 나꾸어 보았다
+decode  글고랭이요 인선잡이인 드침전의 하생원은 기어고 동어 조 던달게에 나꾸 았다
+original 용왕님의 병을 고칠 수 있는 것은 토끼의 간밖에 없어요
+decode  용왕님의 방을 모치 추 있는 것 토이 난밧 었어요
+original 그러다가 뒤를 돌아다보니 노인은 태연히 허리를 펴고 동대문의 추녀를 바라보고 있다
+decode  그러다가 디를 도아다비 노인 태현히 허리를 펴고 동대운의 치녀를 있다
+original 그렇기 때문에 아름다움은 하나의 발견일 수도 있어
+decode  그렇기 때멘에 아름다움은 하나 겨일
+original 토끼는 육지의 동물이 아니요
+decode  모끼는 뮥지의 동물이 아니요
+original 좀 더 깨끗이 만들어 놓고 서로 즐겁게 보낼 수도 있을 텐데
+decode  좀 더 깨끗이 안드어 놓고 서로 즐겁게 보늘 수소 일 텐데
+original 노계파가 인사권 전횡을 할 수 없는 그런 보직을 줘서는 안 되구요
+decode  신도오 전
+original 어떤 사람이 바닷가에 갔다가 예쁜 물새알을 보았다고 하자
+decode  영전 사람이 바다가에 갈다가 예쁨 물사알을 보았다고 하자
+original 런 공격을 했을 뿐만 아니라 공약이 여러 차례 바뀌었다
+decode  그런 오구을 세스 이라
+original 용왕님의 병을 고칠 수 있는 것은 토끼의 간밖에 없어요
+decode  용왕님의 병을 고치 숬 있는 것은 토끼의 간밖에 없어요
+original 다행히 우리 신랑은 주는 대로 잘 먹어서 엄마의 사랑을 듬뿍 받고 있다
+decode  다행히 우리 신랑은 주는 내로 잘 적머서 엄마의 사랑을 둠뿍 학고 있다
+original 그러면 집에 갈 차비도 없겠네
+decode  그러면 집에 갈 차비도 없겠네
+original 재 박 대통령 지지율 측정은 국정을 잘했나 못했나 하는 평가 방식으로 이루어진다
+decode  현섹 답태 통령지 아아 마아 간가
+original 너무나 기분이 좋아서 싱글벙글 했지요
+decode  너무나 가분이 짛아서 싱글를를 했지요
+original 두 사람 앞에 빵 한 개씩 배당되면 머리를 맞대고 똑같이 잘라 나누어 먹는다
+decode  도 사람 앞에 배당되뫼면 머리를 맞대고 똑같이 잘라 나누어 은든다
+original 밥 짓는 일은 거기에서 끝난다
+decode  밥 진년 일은 거기에서 끝난다
+original 선물을 잔뜩 받은 기분이었다
+decode  선물을 딴뜩 받은 기분이었다
+original 동이 앞에 막아서면서부터 책망이었다
+decode  동이 앞앙 강자 마아선머서버
+original 그러나 차는 움직이지 않았다
+decode  그러라 차는 움직이지 않았다
+original 이 방망이도 그런 심정에서 만들었을 것이다
+decode  나는 느 노이여 배헤서 죄댈 재진 것 갓은 괴로을 으렸다
+original 얘들아 시간이 다 되었구나
+decode  애들아 시간이 다 되었구라
+original 여기에서 아이들은 패를 갈라 씨름도 하고 말타기도 했다
+decode  여기에서 아이들은 패를 갈라 씨름도 하고 말타기도 했다
+original 추우실 텐데 우선 이 옷이라도 입으세요
+decode  추엇실 텐데 우선 이 옷이라 오너므세요
+original 그건 물론 눈속임이지
+decode  그건 물론 눈속임이지
+original 문학에서는 감동을 필요로 하기 때문이다
+decode  문학에서는 방당을 필으로 하기 때문이다
+original 이러한 삶이 모여서 이루는 전체적인 양상을 현실이라고 한다
+decode  이런한 산이 무아서 이으는 전체적인 션상을
+original 나무꾼 아저씨 목숨을 구해 주셔서 고맙습니다
+decode  나무꾼 아저씨 목숨을 구해 주셔서 고맙습니다
+original 제가 한번 해볼까요
+decode 제가 한번 해볼까요
+original 가 한번 해볼까요
+decode 제가 한번 해볼까요
+original 현대인들은 그저 나타내는 데만 급급한 나머지 감추는 일을 망각하고 있어
+decode  헌내인을은 그저 나타내는 데만 급긋한 나머지 감추는 일을 망각고고 있어
+original 몸을 식히는 이상으로 정신을 식힌다
+decode  몸을 식히는 이상으로 정신을 식힌다
+original 광화문 지하도에는 많은 노점들이 있다
+decode  광황문 지하도에는 많은 노점들이 있다
+original 뭐라고
+decode  모라고
+original 연습실에 거의 다다랐을 때 더 빨리 가려는 욕심에 골목으로 들어섰다
+decode  연습실에 거릐 다다랐을 때 대 더 말리 가려는 옥심에 골목으로 들어섰다
+original 자라는 토끼를 살살 꾀었어요
+decode  자라는 토끼를 살살 꾀었어요
+original 그건 물론 눈속임이지
+decode  그건 물론 논속임이지
+original 개울가에 이르니 며칠째 보이지 않던 소녀가 건너편 가에 앉아 물장난을 하고 있었다
+decode  귀울가에 이려니 대칠째 보이지 않던 또녀가 거나에 앉아 앉아 줄장은 있닸
+original 중국인이나 일본인들도 밥을 푸고 나면 솥에 눌어붙어 있는 누룽지를 긁는다
+decode  중국인이나 일본인들도 밥을 푸고 나멘 넨어 닜는 누룽질을 는든다
+original 집으로 오는 길에 호랑이에게 그만 잡아먹히셨기 때문이죠
+decode  집으로 오른 기려 호랑이에게 그는 띠미이죠
+original 다만 현실만을 위하여 산다
+decode  나만 현신만을 위하여 산다
+original 마을로 내려가서 사람이라도 잡아먹어야겠다
+decode  마을로 내려가서 사람아도 잡방먹어어겠다
+original  사고로 크게 다친 서씨가 인근 병원으로 옮겨졌으나 의식이 없는 상태다
+decode  니 사보 젠
+original 그러나 소설가는 이러한 사실을 기록하는 데 그치지 않는다
+decode  그러나 소설가는 이허하 사실을 기릭하는 데 그치지 않는다
+original 값을 굉장히 비싸게 부르는 것 같았다
+decode  값을 굉장히 이싸게 부르는 것 앝았다
+original 착실한 녀석인 줄 알았더니
+decode  착심한 녀석인 밀 알았더니
+original 그러면 토끼선생은 왜 그렇게 귀가 길어요
+decode  그러면 토끼깐생은 왜 그렇게 귀가 길어요
+original 그리고 속이 빈 미인을 생각할 수 있을까
+decode  그리고 속이 민 미인을 생각할 수 있을끄까
+original 두 사람 앞에 빵 한 개씩 배당되면 머리를 맞대고 똑같이 잘라 나누어 먹는다
+decode  부 사람 맞대고 똑같이 잘라 나누구 믁단다
+original 발목 하나를 약간 접쳤을 뿐 크게 다친 데는 없었다
+decode  발목 하나를 약간 접첬을 뿐 크게 다친 드는 없었다
+original 그리고 이제는 천천한 걸음이었다
+decode  그리고 이자는 천천한 걸음이었다
+original 그날 이후 나는 신문을 살 때마다 꼬박꼬박 광화문 지하도를 찾게 되었다
+decode  그날 이고 나는 신문을 살 때마다 꼬박꼬박 광화문 지하즐를 찾게 되었다
+original 늘날 여가 활동으로 새를 관찰하는 것을 즐기는 사람이 많습니다
+decode  오늘나 이요오 뜯동오 세를 것을을
+original 광화문 지하도에는 많은 노점들이 있다
+decode  광화문 지라도에는 많은 노점이 있다
+original  구백 칠십 팔 년 일 월에는 지부 사무실을 인야 가로 이전하였습니다
+decode  창국에에시 탎 하아
+original 어느 깊은 산골에 오누이와 어머니가 살고 있었어요
+decode  어느 깊은 산골에 오누이와 어머니가 살고 있었어요
+original 남은 역대 대선에서 특정 후보에게 표를 몰아주는 전략적 선택을 해왔다
+decode  호나는 대새성에서 북전 보오에게 포를 보라지믄 자자 서사
+original 그 아래에서는 은어 떼가 노란 꽃잎을 바라보며 놀다가 어느새 온몸이 노랗게 물듭니다
+decode  그 은어 떼가 노란 꽃잎 어느새 어논이 노랄게 물듭니다
+original 갑제를 통해 극우보수진영의 언론관을 확인할 수 있는 대목이다
+decode  시지에에 수
+original 록수에 나오는 채영신이란 인물은 그를 모델로 한 것이라고 한다
+decode  상록수에 채웡신이라 인물은 그를 모데로 한 것이라고 한다
+original 이처럼 현실을 바라보는 작가들의 시각은 다르다
+decode  이처럼 형실을 바라보는 작가들의 시각은 드르다
+original 토끼 선생
+decode  토끼 선생
+original 어머니가 아무리 달래도 보채면서 울음을 그치지 않았습니다
+decode  어머니가 아무리 달래도 부채면서 울음을 그치지 않았습니다
+original 부락스런 녀석들이라 어쩌는 수 있어야죠
+decode 부락스런 녀석들이라 어쩌는 수 있어야죠
+original 락스런 녀석들이라 어쩌는 수 있어야죠
+decode 부락스런 녀석들이라 어쩌는 수 있어야죠
+original 벌써 사십여 년 전이다
+decode  벌써 가십녀 년 전이다
+original 완전히 자연이 되어 자연을 산다
+decode  완전히 자안이 되어 자연을 산다
+original 네가 할 일이 무엇인가를 찾아라
+decode  네가 할 일이 무엇인가를 찾여라
+original  맨스플레인은 이 여자가 이걸 알겠어 라는 편견 섞인 확신에서 비롯된다
+decode  주은 시브라 이는 이어 일 어
+original  성서 기록은 사람에게 유익한 꿀의 특성 한 가지를 예시합니다
+decode  이 성소 기엉은
+original 분홍 스웨터 소매를 걷어올린 팔과 목덜미가 마냥 희었다
+decode  분홍 수웨터 소마를 걷어오린 펼퐈 마어다
+original 용왕님 토끼를 잡아 왔습니다
+decode  용왕님 토끼를 잡아 왔습니다
+original 이름도 참 곱다
+decode  임돔 담
+original 는 반드시 여러분 곁으로 돌아오겠다고 목소리를 높였다
+decode  스느 단든씨 여오오은 겨드로로
+original 안녕하세요 토끼 선생님
+decode  앙명하세요 토끼 선생님
+original 인간은 이와 같이 실제의 체험으로써 일생 동안 많은 지식을 배우게 된다
+decode  인간은 이와 같이 실제의 체헴으로러 일슨 동안 마으 지식으 된단
+original 되도록이면 적게 담배를 피운다
+decode  되도록이면 적게 담배를 피운다
+original 고 녀석 말투가
+decode  고 며석 말투가
+original 민에게 공약했던 국정 철학이 있고 정책적인 목표가 있으니까
+decode  국니이긔 떤 어라 적이 우러
+original 그다지 마음이 당기지 않는 것을 좇아갔다
+decode  당기지 않는 것을 좇아갔다
+original 마을로 내려가서 사람이라도 잡아먹어야겠다
+decode  나을로 내려가서 사람이도
+original 아카시아꽃이 지고 밤꽃이 피면 보리가 누렇게 익고 무논에는 모내기가 한창이었다
+decode  아켜시아꽃 이고 밤꽃이 피면 보리간 누렇게 익고 문눈에는 모내기가 하차있었다
+original 노인은다른 데 가 사우 난 안 팔겠소하는 퉁명스런 대답이다
+decode  른 가 사우 퉁령스른 채랍이다
+original 해가 이제 겨우 산등성이 위로 한 뼘 가량 떠올랐으니 오정이 되려면 아직 차례 먼 것이다
+decode  해가 이제 게고 상뎡성이 위로 하벼 오서이 어이려 나리
+original 얘 이게 무슨 무슨 조개지
+decode  얘 이 무수 무 조개지
+original 리들은 시나 소설을 읽고 거기에서 우리들의 삶의 모습을 발견한다
+decode  우리들은 시나 거지에서 우리들 발연한다
+original 그것은 다름 아닌 호랑이었습니다
+decode  그것은 다름 아닌 호랑이었습니다
+original 나와 함께 용궁에 가서 삽시다
+decode  나아 애굥 웅궁에 가서 삽시다
+original 요란한 소리와 함께 불도저가 등장했다
+decode  요란한 소리와 함께 불도저자 가장앴다
+original 이렇게 물 속에서 가장 뜨거운 여름의 오후를 지내고 해가 기울어 산장으로 올라간다
+decode  이렇게 자자 여름의 오후를 지내고 해자 기울우 잔장으로 오라간다
+original 값을 굉장히 비싸게 부르는 것 같았다
+decode  밦일 죙장이 비싸게 것 앗았다
+original 집에 있는 것보다 참 좋다는 것이다
+decode  지에 있는 것보다 참 좋다는 것이다
+original 밤에 횃불을 들고 물에 들어가면 잠자는 물고기를 손으로 잡을 수도 있습니다
+decode  밤의 횃볼을 들고 물이 들어가면 삼자는 물고기를 처르로 사도 있습니다
+original 너희 중에 누가 토끼의 간을 구해 올 수 있겠느냐
+decode  너희 지 누가 토끼의 간을 구해 울 수 있겠느냐
+original 소는 어질고 순해서 어린아이들에게도 순순히 따르고 말도 잘 들었다
+decode  소는 어질고 순해서 어린아아들으에도 순순이 나노고 말도 잘 들었다
+original 그러나 차는 꼼짝도 하지 않았다
+decode  그러나 추은 꼼짝도 하지 않았다
+original 소 한 마리 먹이기가 소년은 늘 소원이었다
+decode  소 한 마리 먹이기가 소년은 늘 소원이었다
+original 너의 하루하루가 너를 형성한다
+decode  너얼 하루러룩거 널을 형성안다
+original 어디서 주워 먹은 선머슴인지는 모르겠으나 네게도 아비 어민 있겠지
+decode  어디서 우워 먹은 성머슴인지는 모르겠쓰나 네게오 바비 버 있게
+original 산장에 올라가선 가벼운 식사를 하고 가벼운 칵텔을 마시고 모기장으로 들어간다
+decode  산낭에 올라가선 가벼운 식사를 하고 가려운 칵텔을 마시고 모기겅으로 들안단다
+original 차 시간이 바쁘니 빨리 달라고해도 통 못 들은 체 대꾸가 없다
+decode  차 시간이 가쁘니 빨레 통 못 돌은 체츠 구거 없다
+original 나는 이곳에서 혼자의 피서를 한다
+decode  나는 이곳에서 혼자의 피서를 한다
+original 또 그 말씨에 의해서 인품을 닦아 갈 수도 있는 거야
+decode  또 그 말씨에 오의서 품을 닦아 탎 수 있는 거어
+original 놀리고 달아나는 토끼를 자라는 멍청히 바라보고만 있었답니다
+decode  논이고 달아나는 토끼를 자라는 면잉에 바라고고만 있답니다
+original 저는 바다 속 용궁에 사는 자라입니다
+decode  저는 바다 속 용궁에 사는 자라입니다
+original 죽는 줄만 알았던 토끼는 보석까지 얻게 되자 기분이 너무 좋았어요
+decode  주는 알아저 토끼는 보석까지 얻게 되자 치분이 너무 좋았어요
+original 꼴이 우스워 우리는 보고만 있었다우
+decode  올리 우수워 우리는 부고만 있었다
+original 차 시간이 바쁘니 빨리 달라고해도 통 못 들은 체 대꾸가 없다
+decode  차 실간이 바쁘니 빨리 못 들은 채 대꾸가 없다
+original 옷이 말짱 젖었다거나 옷이 마를 때까지 발가벗고 기다려야 한다거나 해서가 아니었다
+decode  옷이 말짱 마 까지 발갈것고
+original 내가 세간난 지 얼마 안 돼서 의정부에 내려가 살 때다
+decode  내가 세간난 직 얼마 안 돼서 의정부에 내려가 살 때다
+original 또 막 나온 신문의 잉크 냄새를 맡으면 은근히 기분이 좋아지기도 했다
+decode  또 마 논 신문의 잉크 냄새를 맡으면 온그히 기분이 좋아지기도 했다
+original 서울 생활을 한 지 이십여 년이 지났지만 이런 일은 처음이었다
+decode  서왈 생활을 한 지 이십연 년는 지났지만 이런 일은 처음었다다
+original 굽은 벌써 더 자라나기는 틀렸고 닳아버린 철 사이로는 피가 빼짓이 흘렀다
+decode  굽은 벌써 더 자라나기는 늘렸고 얼 사이오느 가재 지짓
+original 그런데도 소녀는 나타나지 않는다
+decode  그런데도 소녀는 나타나리 않은다
+original 고기떼를 향해서 마른코를 팽팽 풀어 던지고 그는 외나무다리를 조심히 딛는 것이었다
+decode  고기떼를 향혀선 풀어 언지고 으는 조시 든
+original 래서 그는 구할 수 있는 데까지 틴들의 번역판을 모두 구해서 불태워 버렸습니다
+decode  그래서 버든 구 시
+original 이유는 간단하다
+decode  이으는 간단하다
+original 한국인은 한 걸음 더 나아가 숭늉을 마시는 풍습을 창조해 냈다
+decode  한국인은 한 골 나아가 숭늉을 마시는 풍습을 창초해 냈다
+original 용궁에는 무서운 짐승도 없고 아주 맛있는 음식도 많지요
+decode  용궁에는 무서운 짐승도 없고 아주 앗싰는 음슥도 많지요
+original 제가 그만 깜빡 잊고 간을 숲 속 바위틈에 두고 왔는데요
+decode  제가 그만 깜빡 잊고 간을 숲 속 사위틈에 두고 았는데요
+original 자라의 속마음을 모르는 토끼는 설레이는 가슴을 안고 자라의 등에 올라 탔어요
+decode  자라의 옥므음을 모르는 토끼는 설레이는 가슴을 안고 자라의 등에 올라 았어요
+original 겨울이 와도 얼음이 얼지 않으면 시냇가는 황량합니다
+decode  겨울 이롸도 얼음이 얼지 않으면 시냇가는 낭령히나
+original 소년은 조약돌을 집어 주머니에 넣었다
+decode  소년은 조약돌을 지어 주머니에 넣었다
+original 왜 엄마가 안 오시는 걸까
+decode  왜 엄마가 안 오시는 걸까
+original 밥 짓는 일은 거기에서 끝난다
+decode  밥 싯는 일은 거기에
+original 이름도 참 곱다
+decode  이런느 참 곱다
+original 그러다가 좀더 무더워지면 내 고향 잔잔한 개울을 찾아 내려간다
+decode  그러다가 좀더 무더워지면 내 고향 잔잔한 개울을 찾아 내려간다
+original 그러나 인생은 그렇지가 않다
+decode  그러나 인생은 그렇지가 않다
+original 어떤 사람이 바닷가에 갔다가 예쁜 물새알을 보았다고 하자
+decode  어던 사람이 바다가에 갔다가 예 움물사알을 보았다고 하자
+original 동대문 맞은쪽 길 가에 앉아서 방망이를 깎아 파는 노인이 있었다
+decode  동대만 직가 앉앉 아서 방망이 까파 파는 온이 있었다
+original 물건 가지고 나꾸었나부지
+decode  물 언 지고 나꾸업바부지
+original 이 동아줄을 타고 오누이는 하늘로 올라갔지요
+decode  이 동아줄을 타고 오누니는 하늘로 올랐갔지요
+original 꽃가지를 스쳐 오는 바람처럼 향기롭고 아름다운 말만 써도 다 못 하고 죽을 우리인데
+decode  곷가지를 스쳐 어는 바름차럼 향기롭고 아름다운 안 다다 담 맛 구 울일레
+original 얼마나 많은 그리움과 아픔과 사랑이 가슴을 타고 흐르고 있을까요
+decode  얼마나 많은 그리우과 아품과 사랑이 가슴을 타고 흐르고 있을까요
+original 이걸로 한번 해봅시다
+decode 이걸라 한번 해봅시다
+original 걸로 한번 해봅시다
+decode 이걸라 한번 해봅시다
+original 각다귀들 장난이지 필연코
+decode  각다귀들 장단이지 필연코
+original 귀신이 온다 귀신이
+decode  귀신이 온다 귀신이
+original 이상을 위하여 산다
+decode  이상을 위하여 산다
+original 또 얼마 후에 방망이를 들고 이리저리 돌려 보더니 다 됐다고 내준다
+decode  또 얼마 무에 방만을를 들고 이리저리 돌려 보더니 달 댔다고 내진디다
+original 벌써 며칠째 소녀는 학교에서 돌아오는 길에 물장난이었다
+decode  벌써 돌아오넨 길에 우창난었닸다
+original 말을 믿고 사는 것이다
+decode  말을 믿고 사는 것이디
+original 엄마가 해 주신 밥이 왜 그렇게 맛있는지
+decode  엄마가 하 주신 밥이 왜 그렇게 맛있는지
+original 려 주세요
+decode  살려
+original 망연자실 서 있는 우리 네 사람 곁에 이번에는 경찰차가 멈추어 섰다
+decode  망연자실 서 있는 우리 네 사람 곁에 이번에는 경찰차가 무추 섰덨다
+original  좀 더 깨끗이 만들어 놓고 서로 즐겁게 보낼 수도 있을 텐데
+decode 좀 더 깨끗이 만들어 놓고 서르 즐르게 보낼 새소 우으 텐데
+original 좀 더 깨끗이 만들어 놓고 서로 즐겁게 보낼 수도 있을 텐데
+decode 좀 더 깨끗이 만들어 놓고 서르 즐르게 보낼 새소 우으 텐데
+original 보리를 거둬들이고 모내기도 끝나면 산도 들도 마을도 온통 푸르름으로 싸여 버렸다
+decode  보리를 버둬들리고 모내기도 끄나면 산도 들도 마을도 온통 푸프르로 렸다
+original 우리 엄마는 맏며느리라 그런지 손이 참 크다
+decode  주리 엄마는 맏며느리라 그런 손이 참
+original 그 길만은 알 수 있나
+decode  그 을 수이다
+original 그러더니 아주머니는 구겨진 천 원짜리 한 장을 건네주었다
+decode  그러더나 아주머니는 구겨는 천 언째려 한 장을 건네주었다
+original 그러다가 깜짝 놀라 일어나고 말았다
+decode  그러다가 깜짜 노니 니너나고 말았다
+original 마을 아이들은 소를 좋아했고 소 뜯기기를 좋아했다
+decode  마을 아이들은 소를 좋아힜고 소 뜨이기를 좋아했다
+original 이름도 참 곱다
+decode  이름도 참 곱다
+original 그래도 어린애가 울음을 그치지 않으니 엄마는 더 큰 목소리로 외쳤습니다
+decode  그러도 울음을 그치지 않느니 엄마믄 더 큰 목소소릴 입습니다
+wer 0.7495379486105358
+ler 0.09960965042746156
+#### FINISH compare2.sh AT Fri Jun 22 13:01:01 KST 2018 #####
