@@ -2,14 +2,14 @@ Korean speech recognition(End to End)
 =================
 
 
-*CTC
+CTC
 ---------------------------
-  * Noise data에 대해 BiLSTM / CNN+BiLSTM 트레이닝 추이
+  * Noise data에 대한 BiLSTM / CNN+BiLSTM 트레이닝 추이
   
 
 
 
-*Listen Attend and Spell
+Listen Attend and Spell
 ---------------------------
 
 Original| Decode | 
