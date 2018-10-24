@@ -20,7 +20,7 @@ CNN-BiLSTM(256) with noise | 0.3956 |
 Listen Attend and Spell
 ---------------------------
 
-
+[listen](https://arxiv.org/abs/1508.01211)
 
 
 Result(단어)
