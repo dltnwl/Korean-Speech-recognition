@@ -4,7 +4,7 @@ Korean speech recognition(End to End)
 
 CTC
 ---------------------------
-  * Noise data에 대한 BiLSTM / CNN+BiLSTM 트레이닝 추이
+  * Noise 여부에 따른 BiLSTM / CNN+BiLSTM 트레이닝 추이
  
 Model| Test LER(문장) | 
 ---- | ---- | 
@@ -20,7 +20,8 @@ Listen Attend and Spell
 
 
 
-Result
+
+Result(단어)
 ---------------------------
 Original| Decode | 
 ---- | ---- | 
@@ -31,3 +32,9 @@ Original| Decode |
 수출입 | 수추립 |
 용량 | 용량 |
 개울물 | 개울물 |
+
+
+Model| LER | WER |
+---- | ---- | ---- |
+CTC| 5.092 | 33.00 |
+Attention | 5.750 | 30.40 |
