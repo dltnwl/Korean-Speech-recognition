@@ -16,11 +16,13 @@ CNN-BiLSTM(256) with noise | 0.3956 |
 
 <img src="/image/picture.JPG" width="400" height="200">
 
+[http://proceedings.mlr.press/v32/graves14.pdf](http://proceedings.mlr.press/v32/graves14.pdf)
+
 
 Listen Attend and Spell
 ---------------------------
 
-[listen](https://arxiv.org/abs/1508.01211)
+[https://arxiv.org/abs/1508.01211](https://arxiv.org/abs/1508.01211)
 
 
 Result(단어)
