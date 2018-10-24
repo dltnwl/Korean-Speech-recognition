@@ -10,8 +10,8 @@ Model| Test LER(문장) |
 ---- | ---- | 
 CNN-LSTM(256) | 0.277151 | 
 CNN-BiLSTM(256) | 0.225424 |
-BiLSTM(256) | 0.4920 |
-CNN-BiLSTM(256) | 0.3956 |
+BiLSTM(256) with noise | 0.4920 |
+CNN-BiLSTM(256) with noise | 0.3956 |
 
 
 
