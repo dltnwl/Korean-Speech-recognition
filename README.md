@@ -5,13 +5,23 @@ Korean speech recognition(End to End)
 CTC
 ---------------------------
   * Noise data에 대한 BiLSTM / CNN+BiLSTM 트레이닝 추이
-  
+ 
+Model| Test LER(문장) | 
+---- | ---- | 
+CNN-LSTM(256) | 0.277151 | 
+CNN-BiLSTM(256) | 0.225424 |
+BiLSTM(256) | 0.4920 |
+CNN-BiLSTM(256) | 0.3956 |
 
 
 
 Listen Attend and Spell
 ---------------------------
 
+
+
+Result
+---------------------------
 Original| Decode | 
 ---- | ---- | 
 저축되다 | 저축되다 | 
