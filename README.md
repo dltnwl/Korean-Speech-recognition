@@ -21,9 +21,8 @@ Listen Attend and Spell
 
 
 
-Result
+Result(단어)
 ---------------------------
- *단어
  
 Model| LER | WER |
 ---- | ---- | ---- |
