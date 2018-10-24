@@ -1,5 +1,6 @@
 Korean speech recognition/ CTC and Attention
 
+Listen Attend and Spell 결과
 
 Original| Decode | 
 ---- | ---- | 
