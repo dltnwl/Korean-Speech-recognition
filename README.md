@@ -2,7 +2,6 @@ Korean speech recognition/ CTC and Attention
 
 
 Original| Decode | 
----- | ---- | 
 저축되다 | 저축되다 | 
 늑혼하다 | 늑콩하다 |
 고물상 | 고물상 |
